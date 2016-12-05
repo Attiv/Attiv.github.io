@@ -130,6 +130,65 @@
       <div class="body-wrap">
         
   
+    <article id="post-Mysql-import-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/05/Mysql-import-md/">Mysql数据库导入</a>
+    </h1>
+  
+
+        <a href="/2016/12/05/Mysql-import-md/" class="archive-article-date">
+  	<time datetime="2016-12-05T06:22:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-05</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Mac下Mysql数据库导入"><a href="#Mac下Mysql数据库导入" class="headerlink" title="Mac下Mysql数据库导入"></a>Mac下Mysql数据库导入</h1><ol>
+<li>使用终端或者可视化软件创建数据库</li>
+<li>终端,输入<code>/usr/local/mysql/bin/mysql -u 用户名 -p</code>回车 输入密码 进入数据库</li>
+<li>选择刚刚创建的数据库</li>
+<li>执行<code>source 数据库.sql文件路径</code></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql/">-Mysql</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/12/05/Mysql-import-md/#more">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-2016-12-05 11:46:43 PHP-Redis" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -148,9 +207,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#Mac下 Redis 和 Php-redis扩展安装</p>
-<h2 id="通过HomeBrew安装Redis"><a href="#通过HomeBrew安装Redis" class="headerlink" title="通过HomeBrew安装Redis"></a>通过HomeBrew安装Redis</h2><figure class="highlight plain"><figcaption><span>install Redis ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">安装完之后可以看到提示的信息</div><div class="line"></div><div class="line">启动Redis使用```redis-server</div></pre></td></tr></table></figure>
-<p>使用命令 <figure class="highlight plain"><figcaption><span>ping ```测试 如果提示```pong```就代表成功</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">## 通过HomeBrew安装PHP-Redis</div><div class="line"></div><div class="line">这里我的PHP版本是7.0的,所以执行的命令就是</div><div class="line"></div><div class="line">```brew install php70-redis</div></pre></td></tr></table></figure></p>
+        <h1 id="Mac下-Redis-和-Php-redis扩展安装"><a href="#Mac下-Redis-和-Php-redis扩展安装" class="headerlink" title="Mac下 Redis 和 Php-redis扩展安装"></a>Mac下 Redis 和 Php-redis扩展安装</h1><hr>
+<h2 id="通过HomeBrew安装Redis"><a href="#通过HomeBrew安装Redis" class="headerlink" title="通过HomeBrew安装Redis"></a>通过HomeBrew安装Redis</h2><p>执行命令:<br><code>brew install Redis</code></p>
+<p>安装完之后可以看到提示的信息</p>
+<p>启动Redis使用 <code>redis-server</code></p>
+<p>使用命令 <code>redis-cli ping</code>测试 如果提示<code>pong</code>就代表成功</p>
+<h2 id="通过HomeBrew安装PHP-Redis"><a href="#通过HomeBrew安装PHP-Redis" class="headerlink" title="通过HomeBrew安装PHP-Redis"></a>通过HomeBrew安装PHP-Redis</h2><p>这里我的PHP版本是7.0的,所以执行的命令就是</p>
+<p><code>brew install php70-redis</code></p>
 <p>安装完之后重启你的服务器,比如Apache,Valet<br>然后在PHPinfo(在项目根目录下修改index.php 内容为phpinfo())里面查看是否用Redis扩展,如果有,显示版本,就安装成功了</p>
 
       
@@ -200,9 +263,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#Mac 下配置 apache PHP mysql </p>
-<p>##步骤</p>
-<ul>
+        <h1 id="Mac-下配置-apache-PHP-mysql"><a href="#Mac-下配置-apache-PHP-mysql" class="headerlink" title="Mac 下配置 apache PHP mysql"></a>Mac 下配置 apache PHP mysql</h1><hr>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ul>
 <li>安装 homebrew</li>
 <li>安装 php (mac 默认有PHP 版本 )查看本机php版本：php -v</li>
 <li>配置apache（mac默认有apache）   vhost</li>
@@ -210,29 +272,37 @@
 <li>配置 hosts</li>
 <li>安装 npm </li>
 </ul>
-<h3 id="安装homebrew"><a href="#安装homebrew" class="headerlink" title="安装homebrew"></a>安装homebrew</h3><figure class="highlight ruby"><figcaption><span>-e "$(curl -fsSL</span><a href="https://raw.githubusercontent.com/Homebrew/install/master/install)" ```"="" target="_blank" rel="external">link</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="comment">### 安装：apache php版本（选装 mac自带apache php）</span></div></pre></td></tr></table></figure>
-<p>brew tap homebrew/apache<br>brew tap homebrew/php<br>brew install httpd24<br>brew install php53<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### 安装Mysql</div><div class="line">```brew install mysql</div></pre></td></tr></table></figure></p>
-<p>(可以用<figure class="highlight plain"><figcaption><span>info mysql``` 查询信息)</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">### 配置mac 自带apache</div><div class="line">重启 apache服务器 ```sudo apachectl restart``` </div><div class="line"></div><div class="line">查看80端口 ```netstat -anl | grep &quot;80&quot;</div></pre></td></tr></table></figure></p>
+<h3 id="安装homebrew"><a href="#安装homebrew" class="headerlink" title="安装homebrew"></a>安装homebrew</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure>
+<h3 id="安装：apache-php版本（选装-mac自带apache-php）"><a href="#安装：apache-php版本（选装-mac自带apache-php）" class="headerlink" title="安装：apache php版本（选装 mac自带apache php）"></a>安装：apache php版本（选装 mac自带apache php）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">brew tap homebrew/apache</div><div class="line">brew tap homebrew/php</div><div class="line">brew install httpd24</div><div class="line">brew install php53</div></pre></td></tr></table></figure>
+<h3 id="安装Mysql"><a href="#安装Mysql" class="headerlink" title="安装Mysql"></a>安装Mysql</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mysql</div></pre></td></tr></table></figure>
+<p>(可以用<code>brew info mysql</code> 查询信息)</p>
+<h3 id="配置mac-自带apache"><a href="#配置mac-自带apache" class="headerlink" title="配置mac 自带apache"></a>配置mac 自带apache</h3><p>重启 apache服务器 <code>sudo apachectl restart</code> </p>
+<p>查看80端口 <code>netstat -anl | grep &quot;80&quot;</code></p>
 <p>地址： /etc/apache2/httpd.conf (可先复制备份一份  sudo cp /etc/apache2/httpd.conf /etc/apache2/httpd.conf.backup )</p>
 <p>在http.conf中 有Listen 80 即为监听80端口</p>
-<p>“#LoadModule php5_module libexec/apache2/libphp5.so 将#删除 配置mac自带的php版本  “<br>如果本地mac 自带php版本过低 需升级。<br><a href="http://weiww.jianshu.com/p/0456dd3cc78b" target="_blank" rel="external">php版本过低想升级</a></p>
+<p>“#LoadModule php5_module libexec/apache2/libphp5.so 将#删除 配置mac自带的php版本  “</p>
+<p>如果本地mac 自带php版本过低 需升级。<br><a href="http://weiww.jianshu.com/p/0456dd3cc78b" target="_blank" rel="external">php版本过低想升级</a></p>
 <p> 在httpd.conf 加入引用本地php的配置 LoadModule php5_module  /usr/local/php5-5.6.27-20161101-100213/libphp5.so（自己的路径）</p>
 <p> 配置apache -&gt;/etc/apache/extra/httpd-vhosts.conf (最好备份)</p>
- <virtualhost *:80=""><br>    ServerAdmin xxx.xxx.xxx<br>    DocumentRoot “项目路径/public(如果是前段项目就没有public)”<br>    ServerName xxx.xxx.xxx<br>    #DirectoryIndex index.php<br>    ErrorLog “/private/var/log/apache2/sites-error_log”<br>    CustomLog “/private/var/log/apache2/sites-access_log” common<br><br> &lt;Directory  “项目路径/public(同上)&gt;<br> Options FollowSymLinks<br> AllowOverride All<br> Order allow,deny<br> allow from all<br> Require all granted<br> <br></virtualhost>
-
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"> &lt;VirtualHost *:80&gt;</div><div class="line">    ServerAdmin xxx.xxx.xxx</div><div class="line">    DocumentRoot &quot;项目路径/public(如果是前段项目就没有public)&quot;</div><div class="line">    ServerName xxx.xxx.xxx</div><div class="line">    #DirectoryIndex index.php</div><div class="line">    ErrorLog &quot;/private/var/log/apache2/sites-error_log&quot;</div><div class="line">    CustomLog &quot;/private/var/log/apache2/sites-access_log&quot; common</div><div class="line"></div><div class="line"> &lt;Directory  &quot;项目路径/public(同上)&gt;</div><div class="line"> Options FollowSymLinks</div><div class="line"> AllowOverride All</div><div class="line"> Order allow,deny</div><div class="line"> allow from all</div><div class="line"> Require all granted  </div><div class="line"> &lt;/Directory&gt;</div><div class="line">&lt;/VirtualHost&gt;</div></pre></td></tr></table></figure>
 <p> 端口号为：80<br>  DocumentRoot “/Users/<em>**</em>/projects/webtailor-backend/public”  配置后端入口 在项目的public目录下 后端代码 不要放在桌面上 最好在/users目录下 新建一个项目文件夹</p>
 <p>配置apache -&gt;/etc/hosts (最好备份),增加一个域名指向127.0.0.1<br> <a href="https://my.oschina.net/joanfen/blog/171109" target="_blank" rel="external">参考</a></p>
 <h3 id="Lumen"><a href="#Lumen" class="headerlink" title="Lumen"></a>Lumen</h3><p>后台:<br>Comopser 安装 项目根目录</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer install</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer require basicit/lumen-vendor-publish</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer dump-autoload</div></pre></td></tr></table></figure>
-<p>前端：</p>
-<figure class="highlight plain"><figcaption><span>install -g npm```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```npm install -g gulp</div></pre></td></tr></table></figure>
+<p>前端：<br><code>npm install -g npm</code></p>
+<p><code>npm install -g gulp</code></p>
 <p>每次改完代码执行</p>
-<figure class="highlight plain"><figcaption><span>build ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">如果不想每次都执行可以用</div><div class="line"></div><div class="line">``` gulp watch</div></pre></td></tr></table></figure>
+<p><code>gulp build</code></p>
+<p>如果不想每次都执行可以用<br><code>gulp watch</code></p>
 <h3 id="配置数据库"><a href="#配置数据库" class="headerlink" title="配置数据库"></a>配置数据库</h3><p>启动 mysql </p>
-<figure class="highlight plain"><figcaption><span>start```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">查看mysql 是否运行</div><div class="line"></div><div class="line">``` brew services list</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><figcaption><span>-anl | grep "3306"   ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">mysql默认密码为空，修改密码 </div><div class="line"></div><div class="line">```mysqladmin -uroot password &quot;密码&quot;</div></pre></td></tr></table></figure>
+<p><code>mysql.server start</code></p>
+<p>查看mysql 是否运行</p>
+<p><code>brew services list</code></p>
+<p><code>netstat -anl | grep &quot;3306&quot;</code></p>
+<p>mysql默认密码为空，修改密码 </p>
+<p><code>mysqladmin -uroot password &quot;密码&quot;</code></p>
 <p>-&gt;修改密码为root:   <code>mysqladmin -uroot password root</code></p>
 <p><a href="http://stackoverflow.com/questions/15016376/cant-connect-to-local-mysql-server-through-socket-homebrew" target="_blank" rel="external">mysql2000错误</a></p>
 <p>创建可以用可视化软件</p>
@@ -289,28 +359,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="初学PHP-Laravel"><a href="#初学PHP-Laravel" class="headerlink" title="#初学PHP Laravel"></a>#初学PHP Laravel</h2><p>##不用Apache改用Valet<br><strong>Valet 要求 mac 操作系统和 Homebrew。安装之前，你需要确保没有其他程序如 Apache 或者 Nginx 占用你本地机器的 80 端口。</strong></p>
+        <h1 id="初学PHP-Laravel"><a href="#初学PHP-Laravel" class="headerlink" title="初学PHP Laravel"></a>初学PHP Laravel</h1><hr>
+<h2 id="不用Apache改用Valet"><a href="#不用Apache改用Valet" class="headerlink" title="不用Apache改用Valet"></a>不用Apache改用Valet</h2><p><strong>Valet 要求 mac 操作系统和 Homebrew。安装之前，你需要确保没有其他程序如 Apache 或者 Nginx 占用你本地机器的 80 端口。</strong></p>
 <p> 安装步骤如下：</p>
 <ul>
-<li><p>安装或者更新 Homebrew 到最新版本，<figure class="highlight plain"><figcaption><span>brew update``` 。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- 使用 ```brew install homebrew/php/php70``` 命令安装 PHP 7.0 。</div><div class="line">- 通过 Composer 安装 Valet 命令为 ```composer global require laravel/valet```。 请确保 ~/.composer/vendor/bin 目录在系统环境变量 「PATH」 中。如果不在,可以用命令:```export PATH=&quot;$PATH:$HOME/.composer/vendor/bin&quot;```导入,然后输入:```source ~/.bashrc</div></pre></td></tr></table></figure></p>
-</li>
-<li><p>运行 <figure class="highlight plain"><figcaption><span>install``` 命令。 这将会配置并安装 Valet 和 DnsMasq，并注册 Valet 随你的系统启动。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">一旦完成 Valet 安装，试着使用命令如``` ping foobar.dev``` 在终端 ping 一些任意的*.dev 域名。如果 Valet 安装正确你会看到来自 127.0.0.1 的响应。</div><div class="line"></div><div class="line">**使用其他顶级域名**</div><div class="line"></div><div class="line">默认的，Valet 使用 .dev 顶级域名。如果你喜欢其他域名，可以使用 ```valet domain tld-name``` 命令,不建议使用```www```开头和```com```结尾。</div><div class="line"></div><div class="line">例如，如果你想使用 .app 来替换 .dev，运行``` valet domain app ```然后 Valet 将会自动的使用 *.app 来为你的项目提供服务。</div><div class="line"></div><div class="line">你可以使用 ```composer global update``` 命令升级你的 Valet 程序，升级之后，最好使用 ```valet install``` 命令更新 Valet 的配置文件。</div><div class="line"></div><div class="line">##服务站点</div><div class="line"></div><div class="line">一旦完成 Valet 安装，你就可以启动服务站点，Valet 提供两个命令帮助你启动你的 Laravel 站点： ```park``` 和 ```link```。</div><div class="line"></div><div class="line">**```park``` 命令**</div><div class="line"></div><div class="line">- 在你的 Mac 中创建一个新目录，例如``` mkdir ~/Sites``` ，然后，使用``` cd ~/Sites ```并运行 ```valet park```。这个命令将会将当前所在目录作为 Web 根目录， Valet 将会在这个目录中搜索站点。</div><div class="line">- 接下来，在这个目录中创建一个新的 Laravel 站点：```laravel new blog```。</div><div class="line">在浏览器中访问 http://blog.dev 。</div><div class="line"></div><div class="line">这就是我们要做的全部工作 现在，所有在 Site 目录中的 Laravel 项目都可以通过 http://folder-name.dev 这种方式访问，是不是很方便。</div><div class="line"></div><div class="line">**```link``` 命令**</div><div class="line"></div><div class="line">link 命令可以用于你的本地 Laravel 站点。这个命令在你想要在目录中提供单个站点是很有用。</div><div class="line"></div><div class="line">- 要使用这个命令，在你的终端中切换到你的某个项目并运行 ```valet link app-name```。 Valet 将会在 ~/.valet/Sites 中创建一个符号链接并指向当前工作目录。</div><div class="line">- 运行完 link 命令, 你可以在浏览器中通过 http://app-name.dev 来访问站点。</div><div class="line">要查看所有的链接目录，运行 ```valet links ```命令。你也可以通过 ```valet unlink app-name ```来删除符号链接。</div><div class="line"></div><div class="line">## 构建完整站点等</div><div class="line"> 参考[官方文档](https://laravel-china.org/docs/5.3/valet#serving-sites)</div><div class="line"></div><div class="line">**要求输入的参数条件**</div></pre></td></tr></table></figure></p>
-<p>try {</p>
-<pre><code>    $this-&gt;validate($request, [
-        &apos;currency_date&apos; =&gt; &apos;required|min:6|max:10&apos;,
-        &apos;currency&apos; =&gt; &apos;required&apos;,
-    ]);
-} catch (HttpResponseException $e) {
-    return response()-&gt;json([
-        &apos;success&apos;   =&gt; false,
-        &apos;message&apos;   =&gt; &apos;date-formatter is wrong.&apos;,
-        &apos;error&apos;     =&gt; IlluminateResponse::HTTP_BAD_REQUEST
-    ], IlluminateResponse::HTTP_BAD_REQUEST);
-}
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">**查询字符串中以...开头**</div></pre></td></tr></table></figure>
-<p> $result = Currency::where(‘currency_date’,’like’,$date.’%’)-&gt;get();<br>```</p>
-</li>
+<li>安装或者更新 Homebrew 到最新版本,使用命令: <code>brew update</code></li>
 </ul>
+<ul>
+<li>使用 <code>brew install homebrew/php/php70</code> 命令安装 PHP 7.0 。</li>
+<li>通过 Composer 安装 Valet 命令为 <code>composer global require laravel/valet</code>。 请确保 ~/.composer/vendor/bin 目录在系统环境变量 「PATH」 中。如果不在,可以用命令:<code>export PATH=&quot;$PATH:$HOME/.composer/vendor/bin&quot;</code>导入,然后输入:<code>source ~/.bashrc</code></li>
+<li>运行 <code>valet install</code> 命令。 这将会配置并安装 Valet 和 DnsMasq，并注册 Valet 随你的系统启动。</li>
+</ul>
+<p>一旦完成 Valet 安装，试着使用命令如<code>ping foobar.dev</code> 在终端 ping 一些任意的*.dev 域名。如果 Valet 安装正确你会看到来自 127.0.0.1 的响应。</p>
+<p><strong>使用其他顶级域名</strong></p>
+<p>默认的，Valet 使用 .dev 顶级域名。如果你喜欢其他域名，可以使用 <code>valet domain tld-name</code>命令,不建议使用<code>www</code>开头和<code>com</code>结尾。</p>
+<p>例如，如果你想使用 .app 来替换 .dev，运行<code>valet domain app</code>然后 Valet 将会自动的使用 *.app 来为你的项目提供服务。</p>
+<p>你可以使用 <code>composer global update</code> 命令升级你的 Valet 程序，升级之后，最好使用 <code>valet install</code> 命令更新 Valet 的配置文件。</p>
+<h2 id="服务站点"><a href="#服务站点" class="headerlink" title="服务站点"></a>服务站点</h2><p>一旦完成 Valet 安装，你就可以启动服务站点，Valet 提供两个命令帮助你启动你的 Laravel 站点： <code>park</code> 和 <code>link</code>。</p>
+<p><strong><code>park</code> 命令</strong></p>
+<ul>
+<li>在你的 Mac 中创建一个新目录，例如<code>mkdir ~/Sites</code> ，然后，使用<code>cd ~/Sites</code>并运行 <code>valet park</code>。这个命令将会将当前所在目录作为 Web 根目录， Valet 将会在这个目录中搜索站点。</li>
+<li>接下来，在这个目录中创建一个新的 Laravel 站点：<code>laravel new blog</code>。<br>在浏览器中访问 <a href="http://blog.dev" target="_blank" rel="external">http://blog.dev</a> 。</li>
+</ul>
+<p>这就是我们要做的全部工作 现在，所有在 Site 目录中的 Laravel 项目都可以通过 <a href="http://folder-name.dev" target="_blank" rel="external">http://folder-name.dev</a> 这种方式访问，是不是很方便。</p>
+<p><strong><code>link</code> 命令</strong></p>
+<p>link 命令可以用于你的本地 Laravel 站点。这个命令在你想要在目录中提供单个站点是很有用。</p>
+<ul>
+<li>要使用这个命令，在你的终端中切换到你的某个项目并运行 <code>valet link app-name</code>。 Valet 将会在 ~/.valet/Sites 中创建一个符号链接并指向当前工作目录。</li>
+<li>运行完 link 命令, 你可以在浏览器中通过 <a href="http://app-name.dev" target="_blank" rel="external">http://app-name.dev</a> 来访问站点。<br>要查看所有的链接目录，运行 <code>valet links</code>命令。你也可以通过 <code>valet unlink app-name</code>来删除符号链接。</li>
+</ul>
+<h2 id="构建完整站点等"><a href="#构建完整站点等" class="headerlink" title="构建完整站点等"></a>构建完整站点等</h2><p> 参考<a href="https://laravel-china.org/docs/5.3/valet#serving-sites" target="_blank" rel="external">官方文档</a></p>
+<p><strong>要求输入的参数条件</strong></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">try &#123;</div><div class="line">          $this-&gt;validate($request, [</div><div class="line">              &apos;currency_date&apos; =&gt; &apos;required|min:6|max:10&apos;,</div><div class="line">              &apos;currency&apos; =&gt; &apos;required&apos;,</div><div class="line">          ]);</div><div class="line">      &#125; catch (HttpResponseException $e) &#123;</div><div class="line">          return response()-&gt;json([</div><div class="line">              &apos;success&apos;   =&gt; false,</div><div class="line">              &apos;message&apos;   =&gt; &apos;date-formatter is wrong.&apos;,</div><div class="line">              &apos;error&apos;     =&gt; IlluminateResponse::HTTP_BAD_REQUEST</div><div class="line">          ], IlluminateResponse::HTTP_BAD_REQUEST);</div><div class="line">      &#125;</div></pre></td></tr></table></figure>
+<p><strong>查询字符串中以…开头</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$result = Currency::where(&apos;currency_date&apos;,&apos;like&apos;,$date.&apos;%&apos;)-&gt;get();</div></pre></td></tr></table></figure>
 
       
 
@@ -367,37 +449,13 @@
         <p>#lumen项目 migrate Mysql</p>
 <ol>
 <li>登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样的数据库.</li>
-<li><p>执行<figure class="highlight php"><figcaption><span>artisan migrate```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">3.</span> 进行填充,执行```php artisan db:seed</div></pre></td></tr></table></figure></p>
-</li>
-<li><p>刷新数据库结构并执行数据填充 <figure class="highlight php"><figcaption><span>artisan migrate:refresh --seed```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">5.</span> 需要添加字段的话在迁移里添加:</div></pre></td></tr></table></figure></p>
-</li>
+<li>执行<code>php artisan migrate</code></li>
+<li>进行填充,执行<code>php artisan db:seed</code></li>
+<li>刷新数据库结构并执行数据填充 <code>php artisan migrate:refresh --seed</code></li>
+<li>需要添加字段的话在迁移里添加:</li>
 </ol>
-<p>&lt;?php<br>use Illuminate\Database\Schema\Blueprint;<br>use Illuminate\Database\Migrations\Migration;<br>class CreateFlightsTable extends Migration<br>{<br>    /**</p>
-<pre><code> * 运行数据库迁移。
- *
- * @return void
- */
-public function up()
-{
-    Schema::create(&apos;flights&apos;, function (Blueprint $table) {
-        $table-&gt;increments(&apos;id&apos;);
-        $table-&gt;string(&apos;name&apos;);
-        $table-&gt;string(&apos;airline&apos;);
-        $table-&gt;timestamps();
-    });
-}
-
-/**
- * 回滚数据库迁移。
- *
- * @return void
- */
-public function down()
-{
-    Schema::drop(&apos;flights&apos;);
-}
-</code></pre><p>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">然后运行```php artisan migrate:refresh --seed</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">use Illuminate\Database\Schema\Blueprint;</div><div class="line">use Illuminate\Database\Migrations\Migration;</div><div class="line">class CreateFlightsTable extends Migration</div><div class="line">&#123;</div><div class="line">    /**</div><div class="line">     * 运行数据库迁移。</div><div class="line">     *</div><div class="line">     * @return void</div><div class="line">     */</div><div class="line">    public function up()</div><div class="line">    &#123;</div><div class="line">        Schema::create(&apos;flights&apos;, function (Blueprint $table) &#123;</div><div class="line">            $table-&gt;increments(&apos;id&apos;);</div><div class="line">            $table-&gt;string(&apos;name&apos;);</div><div class="line">            $table-&gt;string(&apos;airline&apos;);</div><div class="line">            $table-&gt;timestamps();</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 回滚数据库迁移。</div><div class="line">     *</div><div class="line">     * @return void</div><div class="line">     */</div><div class="line">    public function down()</div><div class="line">    &#123;</div><div class="line">        Schema::drop(&apos;flights&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后运行<code>php artisan migrate:refresh --seed</code></p>
 
       
 
@@ -451,16 +509,20 @@ public function down()
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##Apache 3个常用命令</p>
-<ul>
-<li>开启Apache: <figure class="highlight plain"><figcaption><span>apachectl start ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- 关闭Apache: ``` sudo apachectl stop</div></pre></td></tr></table></figure></li>
+        <h2 id="Apache-3个常用命令"><a href="#Apache-3个常用命令" class="headerlink" title="Apache 3个常用命令"></a>Apache 3个常用命令</h2><ul>
+<li><p>开启Apache: <code>sudo apachectl start</code></p>
+</li>
+<li><p>关闭Apache: <code>sudo apachectl stop</code></p>
+</li>
+<li><p>重启Apache: <code>sudo apachectl restart</code></p>
+</li>
 </ul>
-<ul>
-<li>重启Apache: <figure class="highlight plain"><figcaption><span>apachectl restart ```  </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line"></div><div class="line">##lumen项目 migrate Mysql</div><div class="line"></div><div class="line">1. 登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样的数据库.</div><div class="line">2. 执行```php artisan migrate</div></pre></td></tr></table></figure></li>
-</ul>
-<ol>
-<li>进行填充,执行<figure class="highlight php"><figcaption><span>artisan db:seed```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">##Mysql无法开启的问题</span></div><div class="line"></div><div class="line">Mysql在无论怎么安装卸载修改变量都无法开启成功的情况下,可以尝试删除Mysql,然后用 [老版本](链 https:<span class="comment">//pan.baidu.com/s/1qYrmAZU) 密码: ```teu1``` 安装,通过系统偏好设置的Mysql点击开启,使用``` /usr/local/mysql/bin/mysql```进入数据库,</span></div><div class="line">mysql默认密码为空，修改密码``` mysqladmin -uroot password <span class="string">"密码"</span>```   例如 修改密码为root   ```mysqladmin -uroot password root</div></pre></td></tr></table></figure></li>
+<h2 id="lumen项目-migrate-Mysql"><a href="#lumen项目-migrate-Mysql" class="headerlink" title="lumen项目 migrate Mysql"></a>lumen项目 migrate Mysql</h2><ol>
+<li>登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样的数据库.</li>
+<li>执行<code>php artisan migrate</code></li>
+<li>进行填充,执行<code>php artisan db:seed</code></li>
 </ol>
+<h2 id="Mysql无法开启的问题"><a href="#Mysql无法开启的问题" class="headerlink" title="Mysql无法开启的问题"></a>Mysql无法开启的问题</h2><p>Mysql在无论怎么安装卸载修改变量都无法开启成功的情况下,可以尝试删除Mysql,然后用 <a href="链 https://pan.baidu.com/s/1qYrmAZU">老版本</a> 密码: <code>teu1</code>安装,通过系统偏好设置的Mysql点击开启,使用<code>/usr/local/mysql/bin/mysql</code>进入数据库,<br>mysql默认密码为空，修改密码<code>mysqladmin -uroot password &quot;密码&quot;</code>   例如 修改密码为root   <code>mysqladmin -uroot password root</code></p>
 
       
 
@@ -556,7 +618,7 @@ public function down()
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Apache-Mysql/" style="font-size: 10px;">Apache Mysql</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/Lumen/" style="font-size: 10px;">Lumen</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
+    				<a href="/tags/Mysql/" style="font-size: 10px;">-Mysql</a> <a href="/tags/Apache-Mysql/" style="font-size: 10px;">Apache Mysql</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/Lumen/" style="font-size: 10px;">Lumen</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
     			</div>
     	</section>
     

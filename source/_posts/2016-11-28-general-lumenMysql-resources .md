@@ -11,9 +11,9 @@ tags:
 
 
 1. 登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样的数据库.
-2. 执行```php artisan migrate```
-3. 进行填充,执行```php artisan db:seed```
-4. 刷新数据库结构并执行数据填充 ```php artisan migrate:refresh --seed```
+2. 执行`php artisan migrate`
+3. 进行填充,执行`php artisan db:seed`
+4. 刷新数据库结构并执行数据填充 `php artisan migrate:refresh --seed`
 5. 需要添加字段的话在迁移里添加:
 
 ```
@@ -49,4 +49,4 @@ class CreateFlightsTable extends Migration
 }
 
 ```
-然后运行```php artisan migrate:refresh --seed```
+然后运行`php artisan migrate:refresh --seed`

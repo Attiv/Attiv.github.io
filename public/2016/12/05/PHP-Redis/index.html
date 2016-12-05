@@ -6,45 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://vittaSpace.tk">
-  <title>Mac 下配置 apache PHP mysql  | VittaSpace</title>
+  <title>PHP_Redis | VittaSpace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Mac 下配置 apache PHP mysql
-步骤
-安装 homebrew
-安装 php (mac 默认有PHP 版本 )查看本机php版本：php -v
-配置apache（mac默认有apache）   vhost
-安装mysql 
-配置 hosts
-安装 npm 
-
-安装homebrew1ruby -e &amp;quot;$(curl -fsSL https://raw.githubuserco">
+  <meta name="description" content="Mac下 Redis 和 Php-redis扩展安装通过HomeBrew安装Redisinstall Redis ```12345安装完之后可以看到提示的信息启动Redis使用```redis-server
+使用命令 ping ```测试 如果提示```pong```就代表成功1234567## 通过HomeBrew安装PHP-Redis这里我的PHP版本是7.0的,所以执行的命令就是```bre">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac 下配置 apache PHP mysql ">
-<meta property="og:url" content="http://vittaSpace.tk/2016/12/01/2016-12-01-general-php-resources/index.html">
+<meta property="og:title" content="PHP_Redis">
+<meta property="og:url" content="http://vittaSpace.tk/2016/12/05/PHP-Redis/index.html">
 <meta property="og:site_name" content="VittaSpace">
-<meta property="og:description" content="Mac 下配置 apache PHP mysql
-步骤
-安装 homebrew
-安装 php (mac 默认有PHP 版本 )查看本机php版本：php -v
-配置apache（mac默认有apache）   vhost
-安装mysql 
-配置 hosts
-安装 npm 
-
-安装homebrew1ruby -e &amp;quot;$(curl -fsSL https://raw.githubuserco">
-<meta property="og:updated_time" content="2016-12-05T06:21:28.000Z">
+<meta property="og:description" content="Mac下 Redis 和 Php-redis扩展安装通过HomeBrew安装Redisinstall Redis ```12345安装完之后可以看到提示的信息启动Redis使用```redis-server
+使用命令 ping ```测试 如果提示```pong```就代表成功1234567## 通过HomeBrew安装PHP-Redis这里我的PHP版本是7.0的,所以执行的命令就是```bre">
+<meta property="og:updated_time" content="2016-12-05T05:31:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac 下配置 apache PHP mysql ">
-<meta name="twitter:description" content="Mac 下配置 apache PHP mysql
-步骤
-安装 homebrew
-安装 php (mac 默认有PHP 版本 )查看本机php版本：php -v
-配置apache（mac默认有apache）   vhost
-安装mysql 
-配置 hosts
-安装 npm 
-
-安装homebrew1ruby -e &amp;quot;$(curl -fsSL https://raw.githubuserco">
+<meta name="twitter:title" content="PHP_Redis">
+<meta name="twitter:description" content="Mac下 Redis 和 Php-redis扩展安装通过HomeBrew安装Redisinstall Redis ```12345安装完之后可以看到提示的信息启动Redis使用```redis-server
+使用命令 ping ```测试 如果提示```pong```就代表成功1234567## 通过HomeBrew安装PHP-Redis这里我的PHP版本是7.0的,所以执行的命令就是```bre">
   
     <link rel="alternative" href="/atom.xml" title="VittaSpace" type="application/atom+xml">
   
@@ -156,67 +132,27 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-2016-12-01-general-php-resources" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-PHP-Redis" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Mac 下配置 apache PHP mysql 
+      PHP_Redis
     </h1>
   
 
-        <a href="/2016/12/01/2016-12-01-general-php-resources/" class="archive-article-date">
-  	<time datetime="2016-12-01T05:54:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-01</time>
+        <a href="/2016/12/05/PHP-Redis/" class="archive-article-date">
+  	<time datetime="2016-12-05T05:25:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-05</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Mac-下配置-apache-PHP-mysql"><a href="#Mac-下配置-apache-PHP-mysql" class="headerlink" title="Mac 下配置 apache PHP mysql"></a>Mac 下配置 apache PHP mysql</h1><hr>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ul>
-<li>安装 homebrew</li>
-<li>安装 php (mac 默认有PHP 版本 )查看本机php版本：php -v</li>
-<li>配置apache（mac默认有apache）   vhost</li>
-<li>安装mysql </li>
-<li>配置 hosts</li>
-<li>安装 npm </li>
-</ul>
-<h3 id="安装homebrew"><a href="#安装homebrew" class="headerlink" title="安装homebrew"></a>安装homebrew</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure>
-<h3 id="安装：apache-php版本（选装-mac自带apache-php）"><a href="#安装：apache-php版本（选装-mac自带apache-php）" class="headerlink" title="安装：apache php版本（选装 mac自带apache php）"></a>安装：apache php版本（选装 mac自带apache php）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">brew tap homebrew/apache</div><div class="line">brew tap homebrew/php</div><div class="line">brew install httpd24</div><div class="line">brew install php53</div></pre></td></tr></table></figure>
-<h3 id="安装Mysql"><a href="#安装Mysql" class="headerlink" title="安装Mysql"></a>安装Mysql</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mysql</div></pre></td></tr></table></figure>
-<p>(可以用<code>brew info mysql</code> 查询信息)</p>
-<h3 id="配置mac-自带apache"><a href="#配置mac-自带apache" class="headerlink" title="配置mac 自带apache"></a>配置mac 自带apache</h3><p>重启 apache服务器 <code>sudo apachectl restart</code> </p>
-<p>查看80端口 <code>netstat -anl | grep &quot;80&quot;</code></p>
-<p>地址： /etc/apache2/httpd.conf (可先复制备份一份  sudo cp /etc/apache2/httpd.conf /etc/apache2/httpd.conf.backup )</p>
-<p>在http.conf中 有Listen 80 即为监听80端口</p>
-<p>“#LoadModule php5_module libexec/apache2/libphp5.so 将#删除 配置mac自带的php版本  “</p>
-<p>如果本地mac 自带php版本过低 需升级。<br><a href="http://weiww.jianshu.com/p/0456dd3cc78b" target="_blank" rel="external">php版本过低想升级</a></p>
-<p> 在httpd.conf 加入引用本地php的配置 LoadModule php5_module  /usr/local/php5-5.6.27-20161101-100213/libphp5.so（自己的路径）</p>
-<p> 配置apache -&gt;/etc/apache/extra/httpd-vhosts.conf (最好备份)</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"> &lt;VirtualHost *:80&gt;</div><div class="line">    ServerAdmin xxx.xxx.xxx</div><div class="line">    DocumentRoot &quot;项目路径/public(如果是前段项目就没有public)&quot;</div><div class="line">    ServerName xxx.xxx.xxx</div><div class="line">    #DirectoryIndex index.php</div><div class="line">    ErrorLog &quot;/private/var/log/apache2/sites-error_log&quot;</div><div class="line">    CustomLog &quot;/private/var/log/apache2/sites-access_log&quot; common</div><div class="line"></div><div class="line"> &lt;Directory  &quot;项目路径/public(同上)&gt;</div><div class="line"> Options FollowSymLinks</div><div class="line"> AllowOverride All</div><div class="line"> Order allow,deny</div><div class="line"> allow from all</div><div class="line"> Require all granted  </div><div class="line"> &lt;/Directory&gt;</div><div class="line">&lt;/VirtualHost&gt;</div></pre></td></tr></table></figure>
-<p> 端口号为：80<br>  DocumentRoot “/Users/<em>**</em>/projects/webtailor-backend/public”  配置后端入口 在项目的public目录下 后端代码 不要放在桌面上 最好在/users目录下 新建一个项目文件夹</p>
-<p>配置apache -&gt;/etc/hosts (最好备份),增加一个域名指向127.0.0.1<br> <a href="https://my.oschina.net/joanfen/blog/171109" target="_blank" rel="external">参考</a></p>
-<h3 id="Lumen"><a href="#Lumen" class="headerlink" title="Lumen"></a>Lumen</h3><p>后台:<br>Comopser 安装 项目根目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer install</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer require basicit/lumen-vendor-publish</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer dump-autoload</div></pre></td></tr></table></figure>
-<p>前端：<br><code>npm install -g npm</code></p>
-<p><code>npm install -g gulp</code></p>
-<p>每次改完代码执行</p>
-<p><code>gulp build</code></p>
-<p>如果不想每次都执行可以用<br><code>gulp watch</code></p>
-<h3 id="配置数据库"><a href="#配置数据库" class="headerlink" title="配置数据库"></a>配置数据库</h3><p>启动 mysql </p>
-<p><code>mysql.server start</code></p>
-<p>查看mysql 是否运行</p>
-<p><code>brew services list</code></p>
-<p><code>netstat -anl | grep &quot;3306&quot;</code></p>
-<p>mysql默认密码为空，修改密码 </p>
-<p><code>mysqladmin -uroot password &quot;密码&quot;</code></p>
-<p>-&gt;修改密码为root:   <code>mysqladmin -uroot password root</code></p>
-<p><a href="http://stackoverflow.com/questions/15016376/cant-connect-to-local-mysql-server-through-socket-homebrew" target="_blank" rel="external">mysql2000错误</a></p>
-<p>创建可以用可视化软件</p>
+        <h1 id="Mac下-Redis-和-Php-redis扩展安装"><a href="#Mac下-Redis-和-Php-redis扩展安装" class="headerlink" title="Mac下 Redis 和 Php-redis扩展安装"></a>Mac下 Redis 和 Php-redis扩展安装</h1><h2 id="通过HomeBrew安装Redis"><a href="#通过HomeBrew安装Redis" class="headerlink" title="通过HomeBrew安装Redis"></a>通过HomeBrew安装Redis</h2><figure class="highlight plain"><figcaption><span>install Redis ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">安装完之后可以看到提示的信息</div><div class="line"></div><div class="line">启动Redis使用```redis-server</div></pre></td></tr></table></figure>
+<p>使用命令 <figure class="highlight plain"><figcaption><span>ping ```测试 如果提示```pong```就代表成功</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">## 通过HomeBrew安装PHP-Redis</div><div class="line"></div><div class="line">这里我的PHP版本是7.0的,所以执行的命令就是</div><div class="line"></div><div class="line">```brew install php70-redis</div></pre></td></tr></table></figure></p>
+<p>安装完之后重启你的服务器,比如Apache,Valet<br>然后在PHPinfo(在项目根目录下修改index.php 内容为phpinfo())里面查看是否用Redis扩展,如果有,显示版本,就安装成功了</p>
 
       
 
@@ -225,11 +161,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
-	</div>
-
       
 
       
@@ -291,18 +222,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/12/04/2016-12-05 11:46:43 PHP-Redis/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Mac下 Redis 和 Php-redis扩展安装
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/12/01/2016-12-01-general-PHP_New-resources/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">初学PHP Laravel </div>
+    <a href="/2016/12/04/2016-12-05 11:46:43 PHP-Redis/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mac下 Redis 和 Php-redis扩展安装</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -373,7 +295,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Mysql/" style="font-size: 10px;">-Mysql</a> <a href="/tags/Apache-Mysql/" style="font-size: 10px;">Apache Mysql</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/Lumen/" style="font-size: 10px;">Lumen</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
+    				<a href="/tags/Apache-Mysql/" style="font-size: 10px;">Apache Mysql</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/Lumen/" style="font-size: 10px;">Lumen</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
     			</div>
     	</section>
     

@@ -8,31 +8,46 @@
   <link rel="dns-prefetch" href="http://vittaSpace.tk">
   <title>Apache 3个常用命令,Mysql无法开启的问题  | VittaSpace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##Apache 3个常用命令
+  <meta name="description" content="Apache 3个常用命令
+开启Apache: sudo apachectl start
 
-开启Apache: apachectl start ```12- 关闭Apache: ``` sudo apachectl stop
+关闭Apache: sudo apachectl stop
+
+重启Apache: sudo apachectl restart
 
 
-重启Apache: apachectl restart ```  123456 ##lumen项目 migrate Mysql1. 登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样">
+lumen项目 migrate Mysql
+登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样的数据库.
+执行php artisa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Apache 3个常用命令,Mysql无法开启的问题 ">
 <meta property="og:url" content="http://vittaSpace.tk/2016/11/24/2016-11-24-general-apache-resources/index.html">
 <meta property="og:site_name" content="VittaSpace">
-<meta property="og:description" content="##Apache 3个常用命令
+<meta property="og:description" content="Apache 3个常用命令
+开启Apache: sudo apachectl start
 
-开启Apache: apachectl start ```12- 关闭Apache: ``` sudo apachectl stop
+关闭Apache: sudo apachectl stop
+
+重启Apache: sudo apachectl restart
 
 
-重启Apache: apachectl restart ```  123456 ##lumen项目 migrate Mysql1. 登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样">
-<meta property="og:updated_time" content="2016-12-05T03:09:14.000Z">
+lumen项目 migrate Mysql
+登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样的数据库.
+执行php artisa">
+<meta property="og:updated_time" content="2016-12-05T06:18:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Apache 3个常用命令,Mysql无法开启的问题 ">
-<meta name="twitter:description" content="##Apache 3个常用命令
+<meta name="twitter:description" content="Apache 3个常用命令
+开启Apache: sudo apachectl start
 
-开启Apache: apachectl start ```12- 关闭Apache: ``` sudo apachectl stop
+关闭Apache: sudo apachectl stop
+
+重启Apache: sudo apachectl restart
 
 
-重启Apache: apachectl restart ```  123456 ##lumen项目 migrate Mysql1. 登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样">
+lumen项目 migrate Mysql
+登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样的数据库.
+执行php artisa">
   
     <link rel="alternative" href="/atom.xml" title="VittaSpace" type="application/atom+xml">
   
@@ -162,16 +177,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##Apache 3个常用命令</p>
-<ul>
-<li>开启Apache: <figure class="highlight plain"><figcaption><span>apachectl start ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- 关闭Apache: ``` sudo apachectl stop</div></pre></td></tr></table></figure></li>
+        <h2 id="Apache-3个常用命令"><a href="#Apache-3个常用命令" class="headerlink" title="Apache 3个常用命令"></a>Apache 3个常用命令</h2><ul>
+<li><p>开启Apache: <code>sudo apachectl start</code></p>
+</li>
+<li><p>关闭Apache: <code>sudo apachectl stop</code></p>
+</li>
+<li><p>重启Apache: <code>sudo apachectl restart</code></p>
+</li>
 </ul>
-<ul>
-<li>重启Apache: <figure class="highlight plain"><figcaption><span>apachectl restart ```  </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line"></div><div class="line">##lumen项目 migrate Mysql</div><div class="line"></div><div class="line">1. 登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样的数据库.</div><div class="line">2. 执行```php artisan migrate</div></pre></td></tr></table></figure></li>
-</ul>
-<ol>
-<li>进行填充,执行<figure class="highlight php"><figcaption><span>artisan db:seed```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">##Mysql无法开启的问题</span></div><div class="line"></div><div class="line">Mysql在无论怎么安装卸载修改变量都无法开启成功的情况下,可以尝试删除Mysql,然后用 [老版本](链 https:<span class="comment">//pan.baidu.com/s/1qYrmAZU) 密码: ```teu1``` 安装,通过系统偏好设置的Mysql点击开启,使用``` /usr/local/mysql/bin/mysql```进入数据库,</span></div><div class="line">mysql默认密码为空，修改密码``` mysqladmin -uroot password <span class="string">"密码"</span>```   例如 修改密码为root   ```mysqladmin -uroot password root</div></pre></td></tr></table></figure></li>
+<h2 id="lumen项目-migrate-Mysql"><a href="#lumen项目-migrate-Mysql" class="headerlink" title="lumen项目 migrate Mysql"></a>lumen项目 migrate Mysql</h2><ol>
+<li>登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样的数据库.</li>
+<li>执行<code>php artisan migrate</code></li>
+<li>进行填充,执行<code>php artisan db:seed</code></li>
 </ol>
+<h2 id="Mysql无法开启的问题"><a href="#Mysql无法开启的问题" class="headerlink" title="Mysql无法开启的问题"></a>Mysql无法开启的问题</h2><p>Mysql在无论怎么安装卸载修改变量都无法开启成功的情况下,可以尝试删除Mysql,然后用 <a href="链 https://pan.baidu.com/s/1qYrmAZU">老版本</a> 密码: <code>teu1</code>安装,通过系统偏好设置的Mysql点击开启,使用<code>/usr/local/mysql/bin/mysql</code>进入数据库,<br>mysql默认密码为空，修改密码<code>mysqladmin -uroot password &quot;密码&quot;</code>   例如 修改密码为root   <code>mysqladmin -uroot password root</code></p>
 
       
 
@@ -323,7 +342,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Apache-Mysql/" style="font-size: 10px;">Apache Mysql</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/Lumen/" style="font-size: 10px;">Lumen</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
+    				<a href="/tags/Mysql/" style="font-size: 10px;">-Mysql</a> <a href="/tags/Apache-Mysql/" style="font-size: 10px;">Apache Mysql</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/Lumen/" style="font-size: 10px;">Lumen</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
     			</div>
     	</section>
     

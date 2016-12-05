@@ -11,9 +11,12 @@
   <meta name="description" content="#lumen项目 migrate Mysql
 
 登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样的数据库.
-执行artisan migrate```13. 进行填充,执行```php artisan db:seed
+执行php artisan migrate
+进行填充,执行php artisan db:seed
+刷新数据库结构并执行数据填充 php artisan migrate:refresh --seed
+需要添加字段的话在迁移里添加:
 
-刷新数据库结构并执行数据填充 artisan migrate:refresh --seed```15. 需要添加字段的话在迁移里添加:">
+123456">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lumen项目 migrate Mysql ">
 <meta property="og:url" content="http://vittaSpace.tk/2016/11/28/2016-11-28-general-lumenMysql-resources /index.html">
@@ -21,18 +24,24 @@
 <meta property="og:description" content="#lumen项目 migrate Mysql
 
 登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样的数据库.
-执行artisan migrate```13. 进行填充,执行```php artisan db:seed
+执行php artisan migrate
+进行填充,执行php artisan db:seed
+刷新数据库结构并执行数据填充 php artisan migrate:refresh --seed
+需要添加字段的话在迁移里添加:
 
-刷新数据库结构并执行数据填充 artisan migrate:refresh --seed```15. 需要添加字段的话在迁移里添加:">
-<meta property="og:updated_time" content="2016-12-05T03:08:34.000Z">
+123456">
+<meta property="og:updated_time" content="2016-12-05T06:19:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lumen项目 migrate Mysql ">
 <meta name="twitter:description" content="#lumen项目 migrate Mysql
 
 登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样的数据库.
-执行artisan migrate```13. 进行填充,执行```php artisan db:seed
+执行php artisan migrate
+进行填充,执行php artisan db:seed
+刷新数据库结构并执行数据填充 php artisan migrate:refresh --seed
+需要添加字段的话在迁移里添加:
 
-刷新数据库结构并执行数据填充 artisan migrate:refresh --seed```15. 需要添加字段的话在迁移里添加:">
+123456">
   
     <link rel="alternative" href="/atom.xml" title="VittaSpace" type="application/atom+xml">
   
@@ -165,37 +174,13 @@
         <p>#lumen项目 migrate Mysql</p>
 <ol>
 <li>登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样的数据库.</li>
-<li><p>执行<figure class="highlight php"><figcaption><span>artisan migrate```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">3.</span> 进行填充,执行```php artisan db:seed</div></pre></td></tr></table></figure></p>
-</li>
-<li><p>刷新数据库结构并执行数据填充 <figure class="highlight php"><figcaption><span>artisan migrate:refresh --seed```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">5.</span> 需要添加字段的话在迁移里添加:</div></pre></td></tr></table></figure></p>
-</li>
+<li>执行<code>php artisan migrate</code></li>
+<li>进行填充,执行<code>php artisan db:seed</code></li>
+<li>刷新数据库结构并执行数据填充 <code>php artisan migrate:refresh --seed</code></li>
+<li>需要添加字段的话在迁移里添加:</li>
 </ol>
-<p>&lt;?php<br>use Illuminate\Database\Schema\Blueprint;<br>use Illuminate\Database\Migrations\Migration;<br>class CreateFlightsTable extends Migration<br>{<br>    /**</p>
-<pre><code> * 运行数据库迁移。
- *
- * @return void
- */
-public function up()
-{
-    Schema::create(&apos;flights&apos;, function (Blueprint $table) {
-        $table-&gt;increments(&apos;id&apos;);
-        $table-&gt;string(&apos;name&apos;);
-        $table-&gt;string(&apos;airline&apos;);
-        $table-&gt;timestamps();
-    });
-}
-
-/**
- * 回滚数据库迁移。
- *
- * @return void
- */
-public function down()
-{
-    Schema::drop(&apos;flights&apos;);
-}
-</code></pre><p>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">然后运行```php artisan migrate:refresh --seed</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">use Illuminate\Database\Schema\Blueprint;</div><div class="line">use Illuminate\Database\Migrations\Migration;</div><div class="line">class CreateFlightsTable extends Migration</div><div class="line">&#123;</div><div class="line">    /**</div><div class="line">     * 运行数据库迁移。</div><div class="line">     *</div><div class="line">     * @return void</div><div class="line">     */</div><div class="line">    public function up()</div><div class="line">    &#123;</div><div class="line">        Schema::create(&apos;flights&apos;, function (Blueprint $table) &#123;</div><div class="line">            $table-&gt;increments(&apos;id&apos;);</div><div class="line">            $table-&gt;string(&apos;name&apos;);</div><div class="line">            $table-&gt;string(&apos;airline&apos;);</div><div class="line">            $table-&gt;timestamps();</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 回滚数据库迁移。</div><div class="line">     *</div><div class="line">     * @return void</div><div class="line">     */</div><div class="line">    public function down()</div><div class="line">    &#123;</div><div class="line">        Schema::drop(&apos;flights&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后运行<code>php artisan migrate:refresh --seed</code></p>
 
       
 
@@ -352,7 +337,7 @@ public function down()
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Apache-Mysql/" style="font-size: 10px;">Apache Mysql</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/Lumen/" style="font-size: 10px;">Lumen</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
+    				<a href="/tags/Mysql/" style="font-size: 10px;">-Mysql</a> <a href="/tags/Apache-Mysql/" style="font-size: 10px;">Apache Mysql</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/Lumen/" style="font-size: 10px;">Lumen</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
     			</div>
     	</section>
     
