@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://vittaSpace.tk">
-  <title>Archives: 2016 | VittaSpace</title>
+  <title>PHP_Redis | VittaSpace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="✈️在哪里">
-<meta property="og:type" content="website">
-<meta property="og:title" content="VittaSpace">
-<meta property="og:url" content="http://vittaSpace.tk/archives/2016/index.html">
+  <meta name="description" content="Mac下 Redis 和 Php-redis扩展安装通过HomeBrew安装Redisinstall Redis ```12345安装完之后可以看到提示的信息启动Redis使用```redis-server
+使用命令 ping ```测试 如果提示```pong```就代表成功1234567## 通过HomeBrew安装PHP-Redis这里我的PHP版本是7.0的,所以执行的命令就是```bre">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP_Redis">
+<meta property="og:url" content="http://vittaSpace.tk/2016/12/05/PHP-Redis/index.html">
 <meta property="og:site_name" content="VittaSpace">
-<meta property="og:description" content="✈️在哪里">
+<meta property="og:description" content="Mac下 Redis 和 Php-redis扩展安装通过HomeBrew安装Redisinstall Redis ```12345安装完之后可以看到提示的信息启动Redis使用```redis-server
+使用命令 ping ```测试 如果提示```pong```就代表成功1234567## 通过HomeBrew安装PHP-Redis这里我的PHP版本是7.0的,所以执行的命令就是```bre">
+<meta property="og:updated_time" content="2016-12-05T05:31:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VittaSpace">
-<meta name="twitter:description" content="✈️在哪里">
+<meta name="twitter:title" content="PHP_Redis">
+<meta name="twitter:description" content="Mac下 Redis 和 Php-redis扩展安装通过HomeBrew安装Redisinstall Redis ```12345安装完之后可以看到提示的信息启动Redis使用```redis-server
+使用命令 ping ```测试 如果提示```pong```就代表成功1234567## 通过HomeBrew安装PHP-Redis这里我的PHP版本是7.0的,所以执行的命令就是```bre">
   
     <link rel="alternative" href="/atom.xml" title="VittaSpace" type="application/atom+xml">
   
@@ -128,204 +132,110 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-PHP-Redis" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
         
   
+    <h1 class="article-title" itemprop="name">
+      PHP_Redis
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/05/PHP-Redis/" class="archive-article-date">
+
+        <a href="/2016/12/05/PHP-Redis/" class="archive-article-date">
   	<time datetime="2016-12-05T05:25:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-05</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/05/PHP-Redis/">PHP_Redis</a>
-    </h1>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Mac下-Redis-和-Php-redis扩展安装"><a href="#Mac下-Redis-和-Php-redis扩展安装" class="headerlink" title="Mac下 Redis 和 Php-redis扩展安装"></a>Mac下 Redis 和 Php-redis扩展安装</h1><h2 id="通过HomeBrew安装Redis"><a href="#通过HomeBrew安装Redis" class="headerlink" title="通过HomeBrew安装Redis"></a>通过HomeBrew安装Redis</h2><figure class="highlight plain"><figcaption><span>install Redis ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">安装完之后可以看到提示的信息</div><div class="line"></div><div class="line">启动Redis使用```redis-server</div></pre></td></tr></table></figure>
+<p>使用命令 <figure class="highlight plain"><figcaption><span>ping ```测试 如果提示```pong```就代表成功</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">## 通过HomeBrew安装PHP-Redis</div><div class="line"></div><div class="line">这里我的PHP版本是7.0的,所以执行的命令就是</div><div class="line"></div><div class="line">```brew install php70-redis</div></pre></td></tr></table></figure></p>
+<p>安装完之后重启你的服务器,比如Apache,Valet<br>然后在PHPinfo(在项目根目录下修改index.php 内容为phpinfo())里面查看是否用Redis扩展,如果有,显示版本,就安装成功了</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        <div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode"></div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/04/2016-12-05 11:46:43 PHP-Redis/" class="archive-article-date">
-  	<time datetime="2016-12-04T03:59:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/04/2016-12-05 11:46:43 PHP-Redis/">Mac下 Redis 和 Php-redis扩展安装</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/04/2016-12-05 11:46:43 PHP-Redis/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mac下 Redis 和 Php-redis扩展安装</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/01/2016-12-01-general-php-resources/" class="archive-article-date">
-  	<time datetime="2016-12-01T05:54:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/01/2016-12-01-general-php-resources/">Mac 下配置 apache PHP mysql </a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/01/2016-12-01-general-PHP_New-resources/" class="archive-article-date">
-  	<time datetime="2016-11-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/01/2016-12-01-general-PHP_New-resources/">初学PHP Laravel </a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Laravel/">Laravel</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/28/2016-11-28-general-lumenMysql-resources /" class="archive-article-date">
-  	<time datetime="2016-11-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/28/2016-11-28-general-lumenMysql-resources /">Lumen项目 migrate Mysql </a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lumen/">Lumen</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/24/2016-11-24-general-apache-resources/" class="archive-article-date">
-  	<time datetime="2016-11-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/24/2016-11-24-general-apache-resources/">Apache 3个常用命令,Mysql无法开启的问题 </a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Apache-Mysql/">Apache Mysql</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
       </div>
@@ -347,8 +257,8 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
