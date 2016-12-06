@@ -2,8 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="baidu-site-verification" content="MJikZhAbzh" />
-  <meta name="google-site-verification" content="azNQh7jNm-Dp-D9w0j2BuyFSWgYdARZ0TMMmbKcwxuM" />
+  
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://vittaSpace.tk">
@@ -24,21 +23,20 @@
   
     <link rel="icon" href="https://avatars3.githubusercontent.com/u/15698129?v=3&u=53eb590ab862e3eefdf1e81078019a9a0940a88c&s=400">
   
-  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="/main.css?v=4.0.0.css">
   
 
 </head>
 
 <body>
-  <div id="container">
-    <div class="left-col">
+  <div id="container" q-class="show:isCtnShow">
+    <canvas id="anm-canvas" class="anm-canvas"></canvas>
+    <div class="left-col" q-class="show:isShow">
       <div class="overlay"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			
 			<img src="https://avatars3.githubusercontent.com/u/15698129?v=3&amp;u=53eb590ab862e3eefdf1e81078019a9a0940a88c&amp;s=400" class="js-avatar">
-			
 		</a>
 
 		<hgroup>
@@ -60,22 +58,17 @@
 	        
     		
     			
-    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			<a data-idx="0" q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
     			
     			
             
     			
-    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			<a data-idx="1" q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
     			
             
     			
-    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
-    			
-    			
-            
-    			
-    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			<a data-idx="2" q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
     			
             
@@ -91,7 +84,7 @@
 </div>
 
     </div>
-    <div class="mid-col">
+    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       <nav id="mobile-nav">
   	<div class="overlay">
   		<div class="slider-trigger"><i class="icon-sort"></i></div>
@@ -100,9 +93,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				
-					<img src="https://avatars3.githubusercontent.com/u/15698129?v=3&amp;u=53eb590ab862e3eefdf1e81078019a9a0940a88c&amp;s=400" class="js-avatar">
-				
+				<img src="https://avatars3.githubusercontent.com/u/15698129?v=3&amp;u=53eb590ab862e3eefdf1e81078019a9a0940a88c&amp;s=400" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author">Vitta</h1>
@@ -114,6 +105,9 @@
 				<ul>
 				
 					<li><a href="/">主页</a></li>
+		        
+		        
+		        	<li><a href="/archives">所有文章</a></li>
 		        
 				</ul>
 			</nav>
@@ -128,10 +122,152 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div id="wrapper" class="body-wrap">
+        <div class="menu-l">
+          <div class="canvas-wrap">
+            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+          </div>
+          <div id="js-content" class="content-ll">
+            
+  
+    <article id="post-2016-12-06 10:36:52 Git命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
         
   
-    <article id="post-Mysql-import-md" class="article article-type-post" itemscope itemprop="blogPost">
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/06/2016-12-06 10:36:52 Git命令/">Git命令 </a>
+    </h1>
+  
+
+        <a href="/2016/12/06/2016-12-06 10:36:52 Git命令/" class="archive-article-date">
+  	<time datetime="2016-12-06T02:47:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-06</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h1><p>git init                                            初始化本地git仓库（创建新仓库）</p>
+<p>git config –global user.name “xxx”                  配置用户名</p>
+<p>git config –global user.email “xxx@xxx.com”         配置邮件</p>
+<p>git config –global color.ui true                    git status等命令自动着色</p>
+<p>git config –global color.status auto</p>
+<p>git config –global color.diff auto</p>
+<p>git config –global color.branch auto</p>
+<p>git config –global color.interactive auto</p>
+<p>git config –global –unset http.proxy      remove  proxy configuration on git</p>
+<p>git clone git+ssh://git@192.168.53.168/VT.git          clone远程仓库</p>
+<p>git status                                             查看当前版本状态（是否修改）</p>
+<p>git add xyz                                            添加xyz文件至index</p>
+<p>git add .                                    增加当前子目录下所有更改过的文件至index</p>
+<p>git commit -m ‘xxx’                                    提交</p>
+<p>git commit –amend -m ‘xxx’                         合并上一次提交（用于反复修改）</p>
+<p>git commit -am ‘xxx’                                   将add和commit合为一步</p>
+<p>git rm xxx                                             删除index中的文件</p>
+<p>git rm -r *                                            递归删除</p>
+<p>git log                                                显示提交日志</p>
+<p>git log -1                                             显示1行日志 -n为n行</p>
+<p>git log -5</p>
+<p>git log –stat                                         显示提交日志及相关变动文件</p>
+<p>git log -p -m</p>
+<p>git show dfb02e6e4f2f7b573337763e5c0013802e392818      显示某个提交的详细内容</p>
+<p>git show dfb02                                         可只用commitid的前几位</p>
+<p>git show HEAD                                          显示HEAD提交日志</p>
+<p>git show HEAD^         显示HEAD的父（上一个版本）的提交日志^^为上两个版本 ^5为上5个版本</p>
+<p>git tag                                                显示已存在的tag</p>
+<p>git tag -a v2.0 -m ‘xxx’                               增加v2.0的tag</p>
+<p>git show v2.0                                          显示v2.0的日志及详细内容</p>
+<p>git log v2.0                                           显示v2.0的日志</p>
+<p>git diff                                               显示所有未添加至index的变更</p>
+<p>git diff –cached                           显示所有已添加index但还未commit的变更</p>
+<p>git diff HEAD^                                         比较与上一个版本的差异</p>
+<p>git diff HEAD – ./lib                                 比较与HEAD版本lib目录的差异</p>
+<p>git diff origin/master..master         比较远程分支master上有本地分支master上没有的</p>
+<p>git diff origin/master..master –stat          只显示差异的文件，不显示具体内容</p>
+<p>git remote add origin git+ssh://git@192.168.53.168/VT. 增加远程定义（用于push/pull/fetch）</p>
+<p>git branch                                             显示本地分支</p>
+<p>git branch –contains 50089                            显示包含提交50089的分支</p>
+<p>git branch -a                                          显示所有分支</p>
+<p>git branch -r                                          显示所有原创分支</p>
+<p>git branch –merged                                   显示所有已合并到当前分支的分支</p>
+<p>git branch –no-merged                                显示所有未合并到当前分支的分支</p>
+<p>git branch -m master master_copy                       本地分支改名</p>
+<p>git checkout -b master_copy                   从当前分支创建新分支master_copy并检出</p>
+<p>git checkout -b master master_copy                     上面的完整版</p>
+<p>git checkout features/performance            检出已存在的features/performance分支<br>git checkout –track hotfixes/BJVEP933       检出远程分支hotfixes/BJVEP933并创建本地跟踪分支</p>
+<p>git checkout v2.0                                      检出版本v2.0</p>
+<p>git checkout -b devel origin/develop     从远程分支develop创建新本地分支devel并检出</p>
+<p>git checkout – README               检出head版本的README文件（可用于修改错误回退）</p>
+<p>git merge origin/master                                合并远程master分支至当前分支</p>
+<p>git cherry-pick ff44785404a8e                         合并提交ff44785404a8e的修改</p>
+<p>git push origin master                           将当前分支push到远程master分支</p>
+<p>git push origin :hotfixes/BJVEP933            删除远程仓库的hotfixes/BJVEP933分支</p>
+<p>git push –tags                                        把所有tag推送到远程仓库</p>
+<p>git fetch                               获取所有远程分支（不更新本地分支，另需merge）</p>
+<p>git fetch –prune                        获取所有原创分支并清除服务器上已删掉的分支</p>
+<p>git pull origin master                    获取远程分支master并merge到当前分支</p>
+<p>git mv README README2                                  重命名文件README为README2</p>
+<p>git reset –hard HEAD                  将当前版本重置为HEAD（通常用于merge失败回退）</p>
+<p>git rebase</p>
+<p>git branch -d hotfixes/BJVEP933      删除分支hotfixes/BJVEP933（本分支修改已合并到其他分支）<br>git branch -D hotfixes/BJVEP933                        强制删除分支hotfixes/BJVEP933</p>
+<p>git ls-files                                           列出git index包含的文件</p>
+<p>git show-branch                                        图示当前分支历史</p>
+<p>git show-branch –all                                  图示所有分支历史</p>
+<p>git whatchanged                                        显示提交历史对应的文件修改</p>
+<p>git revert dfb02e6e4f2f7b573337763e5c0013802e392818<br>撤销提交dfb02e6e4f2f7b573337763e5c0013802e392818</p>
+<p>git ls-tree HEAD                                       内部命令：显示某个git对象</p>
+<p>git rev-parse v2.0                                内部命令：显示某个ref对于的SHA1 HASH</p>
+<p>git reflog                                             显示所有提交，包括孤立节点</p>
+<p>git show HEAD@{5}</p>
+<p>git show master@{yesterday}                            显示master分支昨天的状态</p>
+<p>git log –pretty=format:’%h %s’ –graph                图示提交日志</p>
+<p>git show HEAD~3</p>
+<p>git show -s –pretty=raw 2be7fcb476</p>
+<p>git stash                                              暂存当前修改，将所有至为HEAD状态</p>
+<p>git stash list                                         查看所有暂存</p>
+<p>git stash show -p stash@{0}                            参考第一次暂存</p>
+<p>git stash apply stash@{0}                              应用第一次暂存</p>
+<p>git grep “delete from”                                 文件中搜索文本“delete<br>from”</p>
+<p>git grep -e ‘#define’ –and -e SORT_DIRENT</p>
+<p>git gc</p>
+<p>git fsck</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/12/06/2016-12-06 10:36:52 Git命令/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Mysql-import-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -172,7 +308,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/05/Mysql-import-md/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/05/Mysql-import-md/">展开全文 >></a>
         </p>
       
 
@@ -190,7 +326,7 @@
 
 
   
-    <article id="post-2016-12-05 11:46:43 PHP-Redis" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2016-12-05 11:46:43 PHP-Redis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -233,7 +369,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/05/2016-12-05 11:46:43 PHP-Redis/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/05/2016-12-05 11:46:43 PHP-Redis/">展开全文 >></a>
         </p>
       
 
@@ -251,7 +387,7 @@
 
 
   
-    <article id="post-2016-12-01-general-php-resources" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2016-12-01-general-php-resources" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -329,7 +465,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/01/2016-12-01-general-php-resources/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/01/2016-12-01-general-php-resources/">展开全文 >></a>
         </p>
       
 
@@ -347,7 +483,7 @@
 
 
   
-    <article id="post-2016-12-01-general-PHP_New-resources" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2016-12-01-general-PHP_New-resources" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -416,7 +552,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/01/2016-12-01-general-PHP_New-resources/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/01/2016-12-01-general-PHP_New-resources/">展开全文 >></a>
         </p>
       
 
@@ -434,7 +570,7 @@
 
 
   
-    <article id="post-2016-11-28-general-lumenMysql-resources " class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2016-11-28-general-lumenMysql-resources " class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -479,7 +615,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/28/2016-11-28-general-lumenMysql-resources /#more">展开全文 >></a>
+          <a class="article-more-a" href="/2016/11/28/2016-11-28-general-lumenMysql-resources /">展开全文 >></a>
         </p>
       
 
@@ -497,7 +633,7 @@
 
 
   
-    <article id="post-2016-11-24-general-apache-resources" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2016-11-24-general-apache-resources" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -546,7 +682,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/24/2016-11-24-general-apache-resources/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2016/11/24/2016-11-24-general-apache-resources/">展开全文 >></a>
         </p>
       
 
@@ -567,6 +703,8 @@
   
 
 
+          </div>
+        </div>
       </div>
       <footer id="footer">
   <div class="outer">
@@ -584,7 +722,6 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		animate: true,
 		isHome: true,
 		isPost: false,
 		isArchive: false,
@@ -596,47 +733,105 @@
 	}
 </script>
 
-<script src="/./main.js"></script>
+<script src="/./main.js?v=4.0.0.js"></script>
 
 
     
-<div class="tools-col">
-  <ul class="btn-wrap">
-    
-      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
-    
-    
-      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
-    
-    
-      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
-    
-    
-      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
-    
-  </ul>
+<div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-wrap">
     
-    	<section class="tools-section tools-section-all chose">
+    	<section class="tools-section tools-section-all" q-show="innerArchive">
+        <div class="search-wrap">
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
+          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+        </div>
+        <div class="widget tagcloud search-tag">
+          <p class="search-tag-wording">tag:</p>
+          <label class="search-switch">
+            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+          </label>
+          <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Apache Mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Lumen</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Laravel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">-Mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Git</a>
+              </li>
+            
+            <div class="clearfix"></div>
+          </ul>
+        </div>
+        <ul class="search-ul">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+            缺失模块。<br/>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            2、在根目录_config.yml里添加配置：
+<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: true
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          </p>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <p class="search-time">
+              <i class="icon-calendar icon"></i>
+              <span q-text="date|dateformat"></span>
+            </p>
+            <p class="search-tag">
+              <i class="icon-price-tags icon"></i>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
+            </p>
+          </li>
+        </ul>
     	</section>
     
 
     
-    	<section class="tools-section tools-section-tag">
-    			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Mysql/" style="font-size: 10px;">-Mysql</a> <a href="/tags/Apache-Mysql/" style="font-size: 10px;">Apache Mysql</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/Lumen/" style="font-size: 10px;">Lumen</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a>
-    			</div>
-    	</section>
-    
-
-    
-    	<section class="tools-section tools-section-friends">
+    	<section class="tools-section tools-section-friends" q-show="friends">
   		
     	</section>
     
 
     
-    	<section class="tools-section tools-section-me">
+    	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
   	  		<div class="aboutme-wrap" id="js-aboutme">&lt;br&gt;谢谢大家</div>
   	  	
