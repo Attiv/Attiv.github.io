@@ -130,63 +130,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-2016-12-07 15:14:22  postgresql数据库导入" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/06/2016-12-07 15:14:22  postgresql数据库导入/">postgresql数据库导入 </a>
-    </h1>
-  
-
-        <a href="/2016/12/06/2016-12-07 15:14:22  postgresql数据库导入/" class="archive-article-date">
-  	<time datetime="2016-12-06T02:47:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-06</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>创建用户 <code>createuser -d -a -P 用户名</code></li>
-<li>导入到本地数据库 <code>psql -h 0.0.0.0  -d 数据库 -U 用户 -p 5432 -f 要导入的数据库.sql</code></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/postgresql/">postgresql</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/06/2016-12-07 15:14:22  postgresql数据库导入/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
     <article id="post-2016-12-06 10:36:52 Git命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -324,6 +267,63 @@
 
 
   
+    <article id="post-2016-12-07 15:14:22  postgresql数据库导入" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/06/2016-12-07 15:14:22  postgresql数据库导入/">postgresql数据库导入 </a>
+    </h1>
+  
+
+        <a href="/2016/12/06/2016-12-07 15:14:22  postgresql数据库导入/" class="archive-article-date">
+  	<time datetime="2016-12-06T02:47:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-06</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>创建用户 <code>createuser -d -a -P 用户名</code></li>
+<li>导入到本地数据库 <code>psql -h 0.0.0.0  -d 数据库 -U 用户 -p 5432 -f 要导入的数据库.sql</code></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/postgresql/">postgresql</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/12/06/2016-12-07 15:14:22  postgresql数据库导入/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-2016-12-07 18-14-16 symfony学习中的记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -353,6 +353,7 @@
 <p>前端开发中添加控件使用了第三方库 <a href="http://v3.bootcss.com/css/" target="_blank" rel="external">Bootstrap</a> 关于这个库在学习中我会另外记录.</p>
 <h2 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h2><p><code>$state.go(&#39;frame.a-b&#39;)</code> 跳转到<code>web/scripts/states/a/b.js</code></p>
 <p>b.js里面在angular.module里含有<code>frame.a-b</code>,等学习了angular之后再补充</p>
+<h2 id="数据库中"><a href="#数据库中" class="headerlink" title="数据库中"></a>数据库中</h2><p><code>$query = $this-&gt;em()-&gt;getRepository(&#39;AppBundle:Company&#39;)</code><br><code>$result = $query-&gt;getQuery()-&gt;getResult();</code><br>$query可以添加语句<br>$result 就是查询到的结果</p>
 
       
 
@@ -888,10 +889,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">postgresql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">PHP</a>
               </li>
              
@@ -900,7 +897,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Redis</a>
+                <a href="javascript:void(0)">postgresql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">php</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -908,7 +909,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">php</a>
+                <a href="javascript:void(0)">Redis</a>
               </li>
             
             <div class="clearfix"></div>
