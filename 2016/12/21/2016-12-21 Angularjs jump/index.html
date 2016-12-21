@@ -6,18 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://vittaSpace.tk">
-  <title>VittaSpace</title>
+  <title>AnjularJS 跳转  | VittaSpace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="google-site-verification: google4170a0a01d5d58f0.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="VittaSpace">
-<meta property="og:url" content="http://vittaSpace.tk/google4170a0a01d5d58f0.html">
+  <meta name="description" content="本文转自:风轻云淡
+AngularJS之页面跳转Route
+除了引用AngularJs.js外，还要引用路由JS, “~/Scripts/angularjs/angular-route.js”
+通过$routeProvider定义路由，示例:1234567891011121314var testModule = angular.module(&amp;apos;testModule&amp;apos;, [&amp;ap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AnjularJS 跳转 ">
+<meta property="og:url" content="http://vittaSpace.tk/2016/12/21/2016-12-21 Angularjs jump/index.html">
 <meta property="og:site_name" content="VittaSpace">
-<meta property="og:description" content="google-site-verification: google4170a0a01d5d58f0.html">
-<meta property="og:updated_time" content="2016-12-05T10:06:30.000Z">
+<meta property="og:description" content="本文转自:风轻云淡
+AngularJS之页面跳转Route
+除了引用AngularJs.js外，还要引用路由JS, “~/Scripts/angularjs/angular-route.js”
+通过$routeProvider定义路由，示例:1234567891011121314var testModule = angular.module(&amp;apos;testModule&amp;apos;, [&amp;ap">
+<meta property="og:updated_time" content="2016-12-21T10:13:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VittaSpace">
-<meta name="twitter:description" content="google-site-verification: google4170a0a01d5d58f0.html">
+<meta name="twitter:title" content="AnjularJS 跳转 ">
+<meta name="twitter:description" content="本文转自:风轻云淡
+AngularJS之页面跳转Route
+除了引用AngularJs.js外，还要引用路由JS, “~/Scripts/angularjs/angular-route.js”
+通过$routeProvider定义路由，示例:1234567891011121314var testModule = angular.module(&amp;apos;testModule&amp;apos;, [&amp;ap">
   
     <link rel="alternative" href="/atom.xml" title="VittaSpace" type="application/atom+xml">
   
@@ -129,12 +138,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-2016-12-21 Angularjs jump" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      AnjularJS 跳转 
+    </h1>
+  
+
+        <a href="/2016/12/21/2016-12-21 Angularjs jump/" class="archive-article-date">
+  	<time datetime="2016-12-21T09:38:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-21</time>
+</a>
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        google-site-verification: google4170a0a01d5d58f0.html
+        <p><strong>本文转自:<a href="http://www.cnblogs.com/berlin/p/5017733.html" target="_blank" rel="external">风轻云淡</a></strong></p>
+<h2 id="AngularJS之页面跳转Route"><a href="#AngularJS之页面跳转Route" class="headerlink" title="AngularJS之页面跳转Route"></a>AngularJS之页面跳转Route</h2><ol>
+<li><strong>除了引用AngularJs.js外，还要引用路由JS, “~/Scripts/angularjs/angular-route.js”</strong></li>
+<li><strong>通过$routeProvider定义路由，示例:</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var testModule = angular.module(&apos;testModule&apos;, [&apos;ngRoute&apos;]);</div><div class="line"></div><div class="line">testModule.config([&apos;$routeProvider&apos;, function ($routeProvider) &#123;</div><div class="line">    $routeProvider.when(&apos;/2&apos;, &#123;//&apos;/2&apos;定义的路由路径，以后通过此路径访问，通常定义为短路径</div><div class="line">        templateUrl: &quot;/home/index2&quot;,//&quot;/home/index2&quot;是路由实际访问的路径，可以是asp.net mvc的访问路径（如此例），也可是具体的页面路径，如“test/test.html&quot;</div><div class="line">        controller:&apos;testController&apos;//路由跳转的controller,后面必须定义此控制器</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    $routeProvider.when(&apos;/3&apos;, &#123;</div><div class="line">        templateUrl: &quot;/home/index3&quot;,</div><div class="line">        controller:&apos;testController&apos;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">&#125;]);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>3.<strong>使用路由跳转，结合ng-view做spa</strong><br>    3.1 在JS中使用$location进行跳转，如示例，在需要的时候调用goToIndex2即可:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">    testModule.controller(&quot;testController&quot;, [&quot;$scope&quot;, &quot;$location&quot;, function ($scope, $location) &#123;</div><div class="line"></div><div class="line">    $scope.goToIndex2 = function () &#123;</div><div class="line">        $location.path(&quot;/2&quot;)</div><div class="line">    &#125;</div><div class="line">&#125;]);</div></pre></td></tr></table></figure></p>
+<p>  3.2 在html代码中使用href=”#path”来进行跳转</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;html &gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;</div><div class="line">    &lt;title&gt;Index1&lt;/title&gt;</div><div class="line">    @Styles.Render(&quot;~/Content/css/base&quot;)</div><div class="line">    @Scripts.Render(&quot;~/script/base&quot;)</div><div class="line">    &lt;script src=&quot;~/scripts/ngmoudle/app.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div ng-app=&quot;testModule&quot; ng-controller=&quot;testController&quot;&gt;</div><div class="line">        &lt;header&gt;</div><div class="line">            &lt;h1&gt;This is Index1&lt;/h1&gt;</div><div class="line">            &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-click=&quot;goToIndex2()&quot;&gt;Index2&lt;/button&gt;</div><div class="line">            &lt;a href=&quot;#/3&quot; class=&quot;btn btn-default&quot;&gt;Index3&lt;/a&gt;&lt;!--通过heft=&quot;#path&quot;方式进行跳转--&gt;</div><div class="line">            &lt;a href=&quot;#/2&quot; class=&quot;btn btn-default&quot; &gt;Index2&lt;/a&gt;</div><div class="line">               &lt;/header&gt;</div><div class="line">        &lt;div ng-view&gt;</div><div class="line"></div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;footer&gt;PAGE FOOTER&lt;/footer&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+
       
 
       
@@ -173,6 +204,11 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li></ul>
+	</div>
+
       
 
       
@@ -223,7 +259,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://vittaSpace.tk/google4170a0a01d5d58f0.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://vittaSpace.tk/2016/12/21/2016-12-21 Angularjs jump/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -235,6 +271,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2016/12/21/2016-12-21 Angularjs jump/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/06/2016-12-07 15:14:22  postgresql数据库导入/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">postgresql数据库导入 </div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 
 
@@ -242,7 +297,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="undefined" data-title="" data-url="http://vittaSpace.tk/google4170a0a01d5d58f0.html"></div>
+	<div class="ds-thread" data-thread-key="2016-12-21 Angularjs jump" data-title="AnjularJS 跳转 " data-url="http://vittaSpace.tk/2016/12/21/2016-12-21 Angularjs jump/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -299,7 +354,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

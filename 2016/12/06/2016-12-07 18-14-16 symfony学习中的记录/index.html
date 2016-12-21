@@ -15,8 +15,9 @@ vendor 存放的是第三方的库
 web/ 存放的是前端代码
 
 在src/里 M:Entity,V:web/(根目录里的),C:Controller
+html文件再web/partials里
 在开发中修改了.pug 或者 es5/6 文件,想要看到效果需要执行 gulp watch
-前端开发中添加控件使用了第三方库 Bootstrap 关于这个库在学习中我会另外记">
+前端开发中添加控件使用了第三方库 Boo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="symfony学习记录 ">
 <meta property="og:url" content="http://vittaSpace.tk/2016/12/06/2016-12-07 18-14-16 symfony学习中的记录/index.html">
@@ -28,9 +29,10 @@ vendor 存放的是第三方的库
 web/ 存放的是前端代码
 
 在src/里 M:Entity,V:web/(根目录里的),C:Controller
+html文件再web/partials里
 在开发中修改了.pug 或者 es5/6 文件,想要看到效果需要执行 gulp watch
-前端开发中添加控件使用了第三方库 Bootstrap 关于这个库在学习中我会另外记">
-<meta property="og:updated_time" content="2016-12-08T10:34:02.000Z">
+前端开发中添加控件使用了第三方库 Boo">
+<meta property="og:updated_time" content="2016-12-21T03:12:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="symfony学习记录 ">
 <meta name="twitter:description" content="代码结构
@@ -40,8 +42,9 @@ vendor 存放的是第三方的库
 web/ 存放的是前端代码
 
 在src/里 M:Entity,V:web/(根目录里的),C:Controller
+html文件再web/partials里
 在开发中修改了.pug 或者 es5/6 文件,想要看到效果需要执行 gulp watch
-前端开发中添加控件使用了第三方库 Bootstrap 关于这个库在学习中我会另外记">
+前端开发中添加控件使用了第三方库 Boo">
   
     <link rel="alternative" href="/atom.xml" title="VittaSpace" type="application/atom+xml">
   
@@ -178,11 +181,23 @@ web/ 存放的是前端代码
 <li><code>web/</code> 存放的是前端代码</li>
 </ul>
 <p>在<code>src/</code>里 <code>M</code>:<code>Entity</code>,<code>V</code>:<code>web/</code>(根目录里的),<code>C</code>:<code>Controller</code></p>
+<p>html文件再<code>web/partials</code>里</p>
 <p>在开发中修改了.pug 或者 es5/6 文件,想要看到效果需要执行 <code>gulp watch</code></p>
 <p>前端开发中添加控件使用了第三方库 <a href="http://v3.bootcss.com/css/" target="_blank" rel="external">Bootstrap</a> 关于这个库在学习中我会另外记录.</p>
 <h2 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h2><p><code>$state.go(&#39;frame.a-b&#39;)</code> 跳转到<code>web/scripts/states/a/b.js</code></p>
 <p>b.js里面在angular.module里含有<code>frame.a-b</code>,等学习了angular之后再补充</p>
 <h2 id="数据库中"><a href="#数据库中" class="headerlink" title="数据库中"></a>数据库中</h2><p><code>$query = $this-&gt;em()-&gt;getRepository(&#39;AppBundle:Company&#39;)</code><br><code>$result = $query-&gt;getQuery()-&gt;getResult();</code><br>$query可以添加语句<br>$result 就是查询到的结果</p>
+<h2 id="assets-js"><a href="#assets-js" class="headerlink" title="assets.js"></a>assets.js</h2><p>添加完js文件(路由文件)之后需要在<code>web/scripts/assets.js</code>添加</p>
+<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><p>如果<code>ng-table=&quot;ctrl.tableParams&quot;</code> ,在对应的angular中需要写<code>controller as ctrl</code></p>
+<p>js中用<code>debugger</code>进行调试</p>
+<p>日期格式:  比如 <code>p(ng-bind=&quot;item.checkOutTime | moment: &#39;L LT&#39;&quot;)</code> L 是日期 LT是时间</p>
+<p><code>ng-bind=&quot;item.checkOutTime</code> 返回的数据item有checkOutTime属性才行</p>
+<p><code>template-pagination=&quot;ng-table/pagination.html&quot;</code>  表格分页</p>
+<p>导入数据库后要记得清下cookie</p>
+<p>使用<code>queryList</code>的才使用<code>sliceQueryArray</code>方法分页</p>
+<p>sql语句里带有<code>?</code>后面就需要使用bindValue绑定值</p>
+<p>php请求里所有的变量在发送的时候都会初始化</p>
+<h2 id="鼠标变成小手"><a href="#鼠标变成小手" class="headerlink" title="鼠标变成小手"></a>鼠标变成小手</h2><p><code>&lt;a href=&quot;#&quot; style=&quot;cursor:pointer&quot;&gt;CSS鼠标手型效果&lt;/a&gt;</code></p>
 
       
 
@@ -291,11 +306,11 @@ web/ 存放的是前端代码
   
 <nav id="article-nav">
   
-    <a href="/2016/12/06/2016-12-07 15:14:22  postgresql数据库导入/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/12/06/2016-12-06 10:36:52 Git命令/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          postgresql数据库导入 
+          Git命令 
         
       </div>
     </a>
@@ -403,11 +418,11 @@ web/ 存放的是前端代码
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Lumen</a>
+                <a href="javascript:void(0)">Apache Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Apache Mysql</a>
+                <a href="javascript:void(0)">Lumen</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -415,11 +430,15 @@ web/ 存放的是前端代码
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">PHP</a>
+                <a href="javascript:void(0)">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -431,11 +450,15 @@ web/ 存放的是前端代码
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Mysql</a>
+                <a href="javascript:void(0)">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Redis</a>
+                <a href="javascript:void(0)">AngularJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Mysql</a>
               </li>
             
             <div class="clearfix"></div>
