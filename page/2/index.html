@@ -130,69 +130,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-2016-11-28-general-lumenMysql-resources " class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/28/2016-11-28-general-lumenMysql-resources /">Lumen项目 migrate Mysql </a>
-    </h1>
-  
-
-        <a href="/2016/11/28/2016-11-28-general-lumenMysql-resources /" class="archive-article-date">
-  	<time datetime="2016-11-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-28</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#lumen项目 migrate Mysql</p>
-<ol>
-<li>登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样的数据库.</li>
-<li>执行<code>php artisan migrate</code></li>
-<li>进行填充,执行<code>php artisan db:seed</code></li>
-<li>刷新数据库结构并执行数据填充 <code>php artisan migrate:refresh --seed</code></li>
-<li>需要添加字段的话在迁移里添加:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">use Illuminate\Database\Schema\Blueprint;</div><div class="line">use Illuminate\Database\Migrations\Migration;</div><div class="line">class CreateFlightsTable extends Migration</div><div class="line">&#123;</div><div class="line">    /**</div><div class="line">     * 运行数据库迁移。</div><div class="line">     *</div><div class="line">     * @return void</div><div class="line">     */</div><div class="line">    public function up()</div><div class="line">    &#123;</div><div class="line">        Schema::create(&apos;flights&apos;, function (Blueprint $table) &#123;</div><div class="line">            $table-&gt;increments(&apos;id&apos;);</div><div class="line">            $table-&gt;string(&apos;name&apos;);</div><div class="line">            $table-&gt;string(&apos;airline&apos;);</div><div class="line">            $table-&gt;timestamps();</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 回滚数据库迁移。</div><div class="line">     *</div><div class="line">     * @return void</div><div class="line">     */</div><div class="line">    public function down()</div><div class="line">    &#123;</div><div class="line">        Schema::drop(&apos;flights&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后运行<code>php artisan migrate:refresh --seed</code></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lumen/">Lumen</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/28/2016-11-28-general-lumenMysql-resources /">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
     <article id="post-2016-11-24-general-apache-resources" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -319,15 +256,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Apache Mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">Lumen</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Laravel</a>
+                <a href="javascript:void(0)">Apache Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -335,15 +268,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Laravel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">PHP</a>
+                <a href="javascript:void(0)">postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">postgresql</a>
+                <a href="javascript:void(0)">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
