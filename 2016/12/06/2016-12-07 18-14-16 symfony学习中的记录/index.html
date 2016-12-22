@@ -12,12 +12,7 @@
 app/ 里存放的大部分是配置信息
 src/ 存放的是php代码
 vendor 存放的是第三方的库
-web/ 存放的是前端代码
-
-在src/里 M:Entity,V:web/(根目录里的),C:Controller
-html文件再web/partials里
-在开发中修改了.pug 或者 es5/6 文件,想要看到效果需要执行 gulp watch
-前端开发中添加控件使用了第三方库 Boo">
+web/ 存放的是前端代码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="symfony学习记录 ">
 <meta property="og:url" content="http://vittaSpace.tk/2016/12/06/2016-12-07 18-14-16 symfony学习中的记录/index.html">
@@ -26,25 +21,15 @@ html文件再web/partials里
 app/ 里存放的大部分是配置信息
 src/ 存放的是php代码
 vendor 存放的是第三方的库
-web/ 存放的是前端代码
-
-在src/里 M:Entity,V:web/(根目录里的),C:Controller
-html文件再web/partials里
-在开发中修改了.pug 或者 es5/6 文件,想要看到效果需要执行 gulp watch
-前端开发中添加控件使用了第三方库 Boo">
-<meta property="og:updated_time" content="2016-12-21T03:12:19.000Z">
+web/ 存放的是前端代码">
+<meta property="og:updated_time" content="2016-12-22T08:19:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="symfony学习记录 ">
 <meta name="twitter:description" content="代码结构
 app/ 里存放的大部分是配置信息
 src/ 存放的是php代码
 vendor 存放的是第三方的库
-web/ 存放的是前端代码
-
-在src/里 M:Entity,V:web/(根目录里的),C:Controller
-html文件再web/partials里
-在开发中修改了.pug 或者 es5/6 文件,想要看到效果需要执行 gulp watch
-前端开发中添加控件使用了第三方库 Boo">
+web/ 存放的是前端代码">
   
     <link rel="alternative" href="/atom.xml" title="VittaSpace" type="application/atom+xml">
   
@@ -180,7 +165,8 @@ html文件再web/partials里
 <li><code>app/</code> 里存放的大部分是配置信息</li>
 <li><code>src/</code> 存放的是php代码</li>
 <li><code>vendor</code> 存放的是第三方的库</li>
-<li><code>web/</code> 存放的是前端代码</li>
+<li><code>web/</code> 存放的是前端代码<a id="more"></a>
+</li>
 </ul>
 <p>在<code>src/</code>里 <code>M</code>:<code>Entity</code>,<code>V</code>:<code>web/</code>(根目录里的),<code>C</code>:<code>Controller</code></p>
 <p>html文件再<code>web/partials</code>里</p>
@@ -200,6 +186,13 @@ html文件再web/partials里
 <p>sql语句里带有<code>?</code>后面就需要使用bindValue绑定值</p>
 <p>php请求里所有的变量在发送的时候都会初始化</p>
 <h2 id="鼠标变成小手"><a href="#鼠标变成小手" class="headerlink" title="鼠标变成小手"></a>鼠标变成小手</h2><p><code>&lt;a href=&quot;#&quot; style=&quot;cursor:pointer&quot;&gt;CSS鼠标手型效果&lt;/a&gt;</code></p>
+<h2 id="删除数组中的某一元素"><a href="#删除数组中的某一元素" class="headerlink" title="删除数组中的某一元素"></a>删除数组中的某一元素</h2><pre><code>for ($i = 0; $i &lt; count($r[&apos;locations&apos;]); $i++) {
+           if (&apos;inactive&apos; == $r[&apos;locations&apos;][$i]-&gt;getStatus())
+           {
+               unset($r[&apos;locations&apos;][$i]);
+           }
+       }
+</code></pre><h2 id="Angularjs-里面"><a href="#Angularjs-里面" class="headerlink" title="Angularjs 里面"></a>Angularjs 里面</h2><p>如果要用<code>$rootscope</code> services里面的function 里面也要加上<code>$rootScope</code></p>
 
       
 
@@ -412,15 +405,15 @@ html文件再web/partials里
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">Laravel</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
