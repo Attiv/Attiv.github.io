@@ -30,7 +30,7 @@
 
 
 如果用brew下载了新版的Php之后apache打不开">
-<meta property="og:updated_time" content="2016-12-22T08:20:08.000Z">
+<meta property="og:updated_time" content="2016-12-22T09:06:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Apache 3个常用命令,Mysql无法开启的问题 ">
 <meta name="twitter:description" content="Apache 3个常用命令
@@ -189,6 +189,11 @@
 <li>进行填充,执行<code>php artisan db:seed</code></li>
 </ol>
 <h2 id="Mysql无法开启的问题"><a href="#Mysql无法开启的问题" class="headerlink" title="Mysql无法开启的问题"></a>Mysql无法开启的问题</h2><p>Mysql在无论怎么安装卸载修改变量都无法开启成功的情况下,可以尝试删除Mysql,然后用 老版本 <code>https://pan.baidu.com/s/1qYrmAZU</code> 密码: <code>teu1</code>安装,通过系统偏好设置的Mysql点击开启,使用<code>/usr/local/mysql/bin/mysql</code>进入数据库,<br>mysql默认密码为空，修改密码<code>mysqladmin -uroot password &quot;密码&quot;</code>   例如 修改密码为root   <code>mysqladmin -uroot password root</code></p>
+<h2 id="Memory-limit-errors"><a href="#Memory-limit-errors" class="headerlink" title="Memory limit errors"></a>Memory limit errors</h2><p>Composer<a href="https://getcomposer.org/doc/articles/troubleshooting.md#memory-limit-errors" target="_blank" rel="external">官方问题查询</a><br>可以在phpinfo()里面查看php.ini在哪里(<code>Loaded Configuration File</code>这一项)<br>然后把<code>memory_limit = -1</code></p>
+<blockquote>
+<p>To get the current memory_limit value, run:<code>php -r &quot;echo ini_get(&#39;memory_limit&#39;).PHP_EOL;&quot;</code></p>
+<p>Or, you can increase the limit with a command-line argument:<code>php -d memory_limit=-1 composer.phar &lt;...&gt;</code></p>
+</blockquote>
 
       
 
@@ -388,11 +393,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Apache Mysql</a>
+                <a href="javascript:void(0)">Lumen</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Lumen</a>
+                <a href="javascript:void(0)">Apache Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -420,15 +425,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">AngularJS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)">Mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Markdown</a>
               </li>
             
             <div class="clearfix"></div>
