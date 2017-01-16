@@ -140,6 +140,131 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2017-01-16 18:49:47图片模糊背景" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/16/2017-01-16 18:49:47图片模糊背景/">图片模糊,图片当背景</a>
+    </h1>
+  
+
+        
+        <a href="/2017/01/16/2017-01-16 18:49:47图片模糊背景/" class="archive-article-date">
+  	<time datetime="2017-01-16T10:50:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果使用<code>self.view.backgroundColor = [UIColor colorWithPatternImage:image]</code><br>不仅耗内存,如果图片太小还会平铺好多.<br>在这里推荐一个图片模糊的第三方:<a href="https://github.com/nicklockwood/FXBlurView" target="_blank" rel="external">FXBlurView</a></p>
+<p>使用:<code>self.view.layer.contents = (id)[avaterImageView.image blurredImageWithRadius:9.0 iterations:9 tintColor:nil].CGImage;</code><br>就可以用模糊图片作为view的backgroundColor.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ObjectC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/16/2017-01-16 18:49:47图片模糊背景/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017-01-10 16:10:37 TextField监听" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/10/2017-01-10 16:10:37 TextField监听/">testFiled监听输入</a>
+    </h1>
+  
+
+        
+        <a href="/2017/01/10/2017-01-10 16:10:37 TextField监听/" class="archive-article-date">
+  	<time datetime="2017-01-10T08:11:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>[textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];</code></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ObjectC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/10/2017-01-10 16:10:37 TextField监听/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-2017-01-05 11:10:25 CocosPod问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -331,19 +456,19 @@
 
 
   
-    <article id="post-2016-12-07 18-14-16 symfony学习中的记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2016-12-06 10:36:52 Git命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/06/2016-12-07 18-14-16 symfony学习中的记录/">symfony学习记录 </a>
+      <a class="article-title" href="/2016/12/06/2016-12-06 10:36:52 Git命令/">Git命令 </a>
     </h1>
   
 
         
-        <a href="/2016/12/06/2016-12-07 18-14-16 symfony学习中的记录/" class="archive-article-date">
+        <a href="/2016/12/06/2016-12-06 10:36:52 Git命令/" class="archive-article-date">
   	<time datetime="2016-12-06T02:47:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-06</time>
 </a>
         
@@ -351,13 +476,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h2><ul>
-<li><code>app/</code> 里存放的大部分是配置信息</li>
-<li><code>src/</code> 存放的是php代码</li>
-<li><code>vendor</code> 存放的是第三方的库</li>
-<li><code>web/</code> 存放的是前端代码
+        <h1 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h1><p>git init                                            初始化本地git仓库（创建新仓库）</p>
+<p>git config –global user.name “xxx”                  配置用户名</p>
+<p>git config –global user.email “xxx@xxx.com”         配置邮件<br>
         
-          <a class="article-more-a" href="/2016/12/06/2016-12-07 18-14-16 symfony学习中的记录/#more">more >></a>
+          <a class="article-more-a" href="/2016/12/06/2016-12-06 10:36:52 Git命令/#more">more >></a>
         
       
 
@@ -371,7 +494,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
         		</li>
       		
 		</ul>
@@ -381,7 +504,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/06/2016-12-07 18-14-16 symfony学习中的记录/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/06/2016-12-06 10:36:52 Git命令/">展开全文 >></a>
         </p>
       
 
@@ -464,19 +587,19 @@
 
 
   
-    <article id="post-2016-12-06 10:36:52 Git命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2016-12-07 18-14-16 symfony学习中的记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/06/2016-12-06 10:36:52 Git命令/">Git命令 </a>
+      <a class="article-title" href="/2016/12/06/2016-12-07 18-14-16 symfony学习中的记录/">symfony学习记录 </a>
     </h1>
   
 
         
-        <a href="/2016/12/06/2016-12-06 10:36:52 Git命令/" class="archive-article-date">
+        <a href="/2016/12/06/2016-12-07 18-14-16 symfony学习中的记录/" class="archive-article-date">
   	<time datetime="2016-12-06T02:47:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-06</time>
 </a>
         
@@ -484,11 +607,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h1><p>git init                                            初始化本地git仓库（创建新仓库）</p>
-<p>git config –global user.name “xxx”                  配置用户名</p>
-<p>git config –global user.email “xxx@xxx.com”         配置邮件<br>
+        <h2 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h2><ul>
+<li><code>app/</code> 里存放的大部分是配置信息</li>
+<li><code>src/</code> 存放的是php代码</li>
+<li><code>vendor</code> 存放的是第三方的库</li>
+<li><code>web/</code> 存放的是前端代码
         
-          <a class="article-more-a" href="/2016/12/06/2016-12-06 10:36:52 Git命令/#more">more >></a>
+          <a class="article-more-a" href="/2016/12/06/2016-12-07 18-14-16 symfony学习中的记录/#more">more >></a>
         
       
 
@@ -502,7 +627,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
         		</li>
       		
 		</ul>
@@ -512,7 +637,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/06/2016-12-06 10:36:52 Git命令/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/06/2016-12-07 18-14-16 symfony学习中的记录/">展开全文 >></a>
         </p>
       
 
@@ -662,144 +787,6 @@
 
 
   
-    <article id="post-2016-12-01-general-php-resources" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/01/2016-12-01-general-php-resources/">Mac 下配置 apache PHP mysql </a>
-    </h1>
-  
-
-        
-        <a href="/2016/12/01/2016-12-01-general-php-resources/" class="archive-article-date">
-  	<time datetime="2016-12-01T05:54:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Mac-下配置-apache-PHP-mysql"><a href="#Mac-下配置-apache-PHP-mysql" class="headerlink" title="Mac 下配置 apache PHP mysql"></a>Mac 下配置 apache PHP mysql</h1><hr>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ul>
-<li>安装 homebrew</li>
-<li>安装 php (mac 默认有PHP 版本 )查看本机php版本：php -v</li>
-<li>配置apache（mac默认有apache）   vhost</li>
-<li>安装mysql </li>
-<li>配置 hosts</li>
-<li>安装 npm </li>
-</ul>
-        
-          <a class="article-more-a" href="/2016/12/01/2016-12-01-general-php-resources/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/01/2016-12-01-general-php-resources/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-2016-12-01-general-PHP_New-resources" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/01/2016-12-01-general-PHP_New-resources/">初学PHP Laravel </a>
-    </h1>
-  
-
-        
-        <a href="/2016/12/01/2016-12-01-general-PHP_New-resources/" class="archive-article-date">
-  	<time datetime="2016-11-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="初学PHP-Laravel"><a href="#初学PHP-Laravel" class="headerlink" title="初学PHP Laravel"></a>初学PHP Laravel</h1><hr>
-<h2 id="不用Apache改用Valet"><a href="#不用Apache改用Valet" class="headerlink" title="不用Apache改用Valet"></a>不用Apache改用Valet</h2><p><strong>Valet 要求 mac 操作系统和 Homebrew。安装之前，你需要确保没有其他程序如 Apache 或者 Nginx 占用你本地机器的 80 端口。</strong></p>
-<p> 安装步骤如下：<br>
-        
-          <a class="article-more-a" href="/2016/12/01/2016-12-01-general-PHP_New-resources/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/01/2016-12-01-general-PHP_New-resources/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -908,11 +895,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Lumen</a>
+                <a href="javascript:void(0)" class="js-tag color3">Apache Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Apache Mysql</a>
+                <a href="javascript:void(0)" class="js-tag color1">Lumen</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -936,11 +923,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
+                <a href="javascript:void(0)" class="js-tag color3">ObjectC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -949,10 +940,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AngularJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ObjectC</a>
               </li>
             
             <div class="clearfix"></div>
