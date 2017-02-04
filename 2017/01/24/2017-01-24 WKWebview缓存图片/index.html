@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://vittaSpace.tk">
-  <title>Archives: 2016 | VittaSpace</title>
+  <title>webview缓存图片 | VittaSpace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="✈️在哪里">
-<meta property="og:type" content="website">
-<meta property="og:title" content="VittaSpace">
-<meta property="og:url" content="http://vittaSpace.tk/archives/2016/index.html">
+  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435#pragma mark - WKWebviewDelegate- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationRe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webview缓存图片">
+<meta property="og:url" content="http://vittaSpace.tk/2017/01/24/2017-01-24 WKWebview缓存图片/index.html">
 <meta property="og:site_name" content="VittaSpace">
-<meta property="og:description" content="✈️在哪里">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435#pragma mark - WKWebviewDelegate- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationRe">
+<meta property="og:updated_time" content="2017-01-24T04:46:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VittaSpace">
-<meta name="twitter:description" content="✈️在哪里">
+<meta name="twitter:title" content="webview缓存图片">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435#pragma mark - WKWebviewDelegate- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationRe">
   
     <link rel="alternative" href="/atom.xml" title="VittaSpace" type="application/atom+xml">
   
@@ -138,440 +139,188 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-2017-01-24 WKWebview缓存图片" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webview缓存图片
+    </h1>
+  
+
+        
+        <a href="/2017/01/24/2017-01-24 WKWebview缓存图片/" class="archive-article-date">
+  	<time datetime="2017-01-24T03:41:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-24</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">#pragma mark - WKWebviewDelegate</div><div class="line">- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler</div><div class="line">&#123;</div><div class="line"></div><div class="line">    NSString *htmlStr = [Util changeImgSrc:[webView.URL absoluteString]];</div><div class="line">//    WLog(@&quot;html == %@&quot;, htmlStr);</div><div class="line">    // 读取本地JS文件，把JS加到最后面</div><div class="line">    NSString *jsPath = [[NSBundle mainBundle] pathForResource:@&quot;DetalJavascript&quot; ofType:@&quot;html&quot;];</div><div class="line">    NSString *jsHtml = [NSString stringWithContentsOfFile:jsPath encoding:NSUTF8StringEncoding error:nil];</div><div class="line">    htmlStr = [htmlStr stringByAppendingString:[NSString stringWithFormat:@&quot;\n%@&quot;, jsHtml]];</div><div class="line">    WLog(@&quot;%@&quot;, htmlStr);</div><div class="line">        NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];</div><div class="line">    //    [NSKeyedArchiver archiveRootObject:htmlStr toFile:[NSString stringWithFormat:@&quot;%@/index.html&quot;, docPath]];</div><div class="line">        [webView loadHTMLString:htmlStr baseURL:[NSURL fileURLWithPath:[NSString stringWithFormat:@&quot;%@&quot;, docPath]]];</div><div class="line">//    [webView loadHTMLString:htmlStr baseURL:[NSURL fileURLWithPath:@&quot;/&quot;]];</div><div class="line"></div><div class="line">    //            [webView loadHTMLString:htmlStr baseURL:nil];</div><div class="line"></div><div class="line">    decisionHandler(WKNavigationResponsePolicyAllow);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">#pragma mark - 图片下载完成通知</div><div class="line">-(void)imageDownloadSuccess:(NSNotification *)notify&#123;</div><div class="line">    NSString *imgPath = [NSString stringWithFormat:@&quot;%@&quot;,notify.object];</div><div class="line">     imgPath = [NSString stringWithFormat:@&quot;file://%@&quot;, imgPath];</div><div class="line">    NSString *imgName = [imgPath lastPathComponent];</div><div class="line">    if (imgPath) &#123;</div><div class="line">        [self.bridge callHandler:@&quot;imagesDownloadCompleteHandler&quot; data:@[imgName,imgPath] responseCallback:^(id responseData) &#123;</div><div class="line">            </div><div class="line">            NSLog(@&quot;调用完JS后的回调：%@&quot;,responseData);</div><div class="line">        &#125;];</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>JS文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">&lt;script language=&quot;javascript&quot;&gt;</div><div class="line"></div><div class="line">// 以下是固定写法，你自己的JS文件中必须包含如下代码</div><div class="line">function setupWebViewJavascriptBridge(callback) &#123;</div><div class="line">    if (window.WebViewJavascriptBridge) &#123; return callback(WebViewJavascriptBridge); &#125;</div><div class="line">    if (window.WVJBCallbacks) &#123; return window.WVJBCallbacks.push(callback); &#125;</div><div class="line">    window.WVJBCallbacks = [callback];</div><div class="line">    var WVJBIframe = document.createElement(&apos;iframe&apos;);</div><div class="line">    WVJBIframe.style.display = &apos;none&apos;;</div><div class="line">    WVJBIframe.src = &apos;https://__bridge_loaded__&apos;;</div><div class="line">    document.documentElement.appendChild(WVJBIframe);</div><div class="line">    setTimeout(function() &#123; document.documentElement.removeChild(WVJBIframe) &#125;, 0)</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 注册相关的回调</div><div class="line">setupWebViewJavascriptBridge(function(bridge) &#123;</div><div class="line"></div><div class="line">    /* Initialize your app here */</div><div class="line"></div><div class="line">    //这句代码是注册一个名为&apos;JS Echo&apos;的方法,data是参数,responseCallback是返回,相当于return,供APP端调用</div><div class="line">    bridge.registerHandler(&apos;JS Echo&apos;, function(data, responseCallback) &#123;</div><div class="line">        console.log(&quot;JS Echo called with:&quot;, data)</div><div class="line">        responseCallback(data)</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    bridge.registerHandler(&apos;imagesDownloadCompleteHandler&apos;, function(data,responseCallback) &#123;</div><div class="line"></div><div class="line"></div><div class="line">        var imgName = data[0];</div><div class="line">        var imgPath = data[1];</div><div class="line">          //读取未替换的图片</div><div class="line">        var imgs = document.getElementsByTagName(&apos;img&apos;);</div><div class="line">        if (imgs) &#123;</div><div class="line">          for (var i = 0, j = imgs.length; i &lt; j; i++) &#123;</div><div class="line">                if (imgs[i].src.indexOf(imgName) &gt;= 0) &#123;</div><div class="line">                    imgs[i].src = imgPath;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">    //调用APP端原生的方法,方法名为&apos;ObjC Echo&apos;,responseData是JS端接收到的返回值.</div><div class="line">    bridge.callHandler(&apos;ObjC Echo&apos;, 传入的参数 , function responseCallback(responseData) &#123;</div><div class="line">        console.log(&quot;JS received response:&quot;, responseData)</div><div class="line">     &#125;)</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>工具类:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div></pre></td><td class="code"><pre><div class="line">//  Util.m</div><div class="line">//  ypapp</div><div class="line">//</div><div class="line">//  Created by test on 2017/1/20.</div><div class="line">//  Copyright © 2017年 Shinetech Zhengzhou. All rights reserved.</div><div class="line">//</div><div class="line"></div><div class="line">#import &quot;Util.h&quot;</div><div class="line">#import &lt;AFNetworking/AFNetworking.h&gt;</div><div class="line">#import &lt;CommonCrypto/CommonDigest.h&gt;</div><div class="line">#import &quot;UIImageView+AFNetworking.h&quot;</div><div class="line"></div><div class="line">@implementation Util</div><div class="line"></div><div class="line">+ (Util *)shareTool</div><div class="line">&#123;</div><div class="line">    static Util *tool;</div><div class="line">    static dispatch_once_t onceToken;</div><div class="line">    dispatch_once(&amp;onceToken, ^&#123;</div><div class="line">      tool = [[Util alloc] init];</div><div class="line">    &#125;);</div><div class="line">    return tool;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (NSString *)token</div><div class="line">&#123;</div><div class="line">    if (nil == _token)</div><div class="line">    &#123;</div><div class="line">        _token = [NSString stringWithFormat:@&quot;%@&quot;, [NSKeyedUnarchiver unarchiveObjectWithFile:kUserTokenFile]];</div><div class="line">    &#125;</div><div class="line">    return _token;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)downloadImageWithUrl:(NSString *)src</div><div class="line">&#123;</div><div class="line">    // 注意：这里并没有写专门下载图片的代码，就直接使用了AFN的扩展，只是为了省麻烦而已。</div><div class="line">    UIImageView *imgView = [[UIImageView alloc] init];</div><div class="line">    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:src]];</div><div class="line"></div><div class="line">    [imgView setImageWithURLRequest:request</div><div class="line">        placeholderImage:nil</div><div class="line">        success:^(NSURLRequest *_Nonnull request, NSHTTPURLResponse *_Nullable response, UIImage *_Nonnull image) &#123;</div><div class="line">          NSData *data = UIImagePNGRepresentation(image);</div><div class="line">          NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];</div><div class="line">          NSString *localPath = [docPath stringByAppendingPathComponent:[self md5:src]];</div><div class="line">          NSString *extension = [src pathExtension];</div><div class="line">          localPath = [localPath stringByAppendingString:[NSString stringWithFormat:@&quot;.%@&quot;, extension]];</div><div class="line"></div><div class="line">          if (![data writeToFile:localPath atomically:NO])</div><div class="line">          &#123;</div><div class="line">              WLog(@&quot;写入本地失败：%@&quot;, src);</div><div class="line">          &#125;</div><div class="line">          else</div><div class="line">          &#123;</div><div class="line">              [kNotificationCenter postNotificationName:kDownloadImageSuccessNotify object:localPath];</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">        failure:^(NSURLRequest *_Nonnull request, NSHTTPURLResponse *_Nullable response, NSError *_Nonnull error) &#123;</div><div class="line">          WLog(@&quot;download image url fail: %@&quot;, src);</div><div class="line">        &#125;];</div><div class="line"></div><div class="line">    if (self.imageViews == nil)</div><div class="line">    &#123;</div><div class="line">        self.imageViews = [[NSMutableArray alloc] init];</div><div class="line">    &#125;</div><div class="line">    [self.imageViews addObject:imgView];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (NSString *)md5:(NSString *)sourceContent</div><div class="line">&#123;</div><div class="line">    if (self == nil || [sourceContent length] == 0)</div><div class="line">    &#123;</div><div class="line">        return nil;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    unsigned char digest[CC_MD5_DIGEST_LENGTH], i;</div><div class="line">    CC_MD5([sourceContent UTF8String], (int)[sourceContent lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);</div><div class="line">    NSMutableString *ms = [NSMutableString string];</div><div class="line"></div><div class="line">    for (i = 0; i &lt; CC_MD5_DIGEST_LENGTH; i++)</div><div class="line">    &#123;</div><div class="line">        [ms appendFormat:@&quot;%02x&quot;, (int)(digest[i])];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return [ms copy];</div><div class="line">&#125;</div><div class="line"></div><div class="line">/**</div><div class="line"> 修改HTML里的&lt;IMG src&gt;</div><div class="line"></div><div class="line"> @param urlStr 原始链接</div><div class="line"> @return 修改之后的HTMLString</div><div class="line"> */</div><div class="line">+ (NSString *)changeImgSrc:(NSString *)urlStr</div><div class="line">&#123;</div><div class="line">    NSString *htmlStr = [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:urlStr] encoding:NSUTF8StringEncoding error:nil];</div><div class="line">    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@&quot;&lt;img[^&gt;]+src\\s*=\\s*[&apos;\&quot;]([^&apos;\&quot;]+)[&apos;\&quot;][^&gt;]*&gt;&quot; options:NSRegularExpressionAllowCommentsAndWhitespace error:nil];</div><div class="line">    NSArray *result = [regex matchesInString:htmlStr options:NSMatchingReportCompletion range:NSMakeRange(0, htmlStr.length)];</div><div class="line"></div><div class="line">    NSMutableDictionary *urlDicts = [[NSMutableDictionary alloc] init];</div><div class="line">    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];</div><div class="line"></div><div class="line">    [result enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) &#123;</div><div class="line">      NSTextCheckingResult *item = (NSTextCheckingResult *)obj;</div><div class="line">      NSString *imgHtml = [htmlStr substringWithRange:[item rangeAtIndex:0]];</div><div class="line"></div><div class="line">      NSArray *tmpArray = nil;</div><div class="line">      if ([imgHtml rangeOfString:@&quot;src=\&quot;&quot;].location != NSNotFound)</div><div class="line">      &#123;</div><div class="line">          tmpArray = [imgHtml componentsSeparatedByString:@&quot;src=\&quot;&quot;];</div><div class="line">      &#125;</div><div class="line">      else if ([imgHtml rangeOfString:@&quot;src=&quot;].location != NSNotFound)</div><div class="line">      &#123;</div><div class="line">          tmpArray = [imgHtml componentsSeparatedByString:@&quot;src=&quot;];</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      if (tmpArray.count &gt;= 2)</div><div class="line">      &#123;</div><div class="line">          NSString *src = tmpArray[1];</div><div class="line"></div><div class="line">          NSUInteger loc = [src rangeOfString:@&quot;\&quot;&quot;].location;</div><div class="line">          if (loc != NSNotFound)</div><div class="line">          &#123;</div><div class="line">              src = [src substringToIndex:loc];</div><div class="line"></div><div class="line">              WLog(@&quot;正确解析出来的SRC为：%@&quot;, src);</div><div class="line">              if (src.length &gt; 0)</div><div class="line">              &#123;</div><div class="line">                  NSString *extension = [src pathExtension];</div><div class="line">                  NSString *localPath = [docPath stringByAppendingPathComponent:[[self shareTool] md5:src]];</div><div class="line">                  localPath = [localPath stringByAppendingString:[NSString stringWithFormat:@&quot;.%@&quot;, extension]];</div><div class="line">                  localPath = [NSString stringWithFormat:@&quot;file://%@&quot;, localPath];</div><div class="line"></div><div class="line">                  // 先将链接取个本地名字，且获取完整路径</div><div class="line">                  [urlDicts setObject:localPath forKey:src];</div><div class="line">              &#125;</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;];</div><div class="line"></div><div class="line">    // 遍历所有的URL，替换成本地的URL，并异步获取图片</div><div class="line">    for (NSString *src in urlDicts.allKeys)</div><div class="line">    &#123;</div><div class="line">        NSString *localPath = [urlDicts objectForKey:src];</div><div class="line">        htmlStr = [htmlStr stringByReplacingOccurrencesOfString:src withString:localPath];</div><div class="line"></div><div class="line">        localPath = [localPath stringByReplacingOccurrencesOfString:@&quot;file://&quot; withString:@&quot;&quot;];</div><div class="line">        // 如果已经缓存过，就不需要重复加载了。</div><div class="line">                if (![[NSFileManager defaultManager] fileExistsAtPath:localPath]) &#123;</div><div class="line">        </div><div class="line">            [[self shareTool] downloadImageWithUrl:src];</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    return htmlStr;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://mobilecodec.alipay.com/show.htm?code=a6x01698go4tj6glnj6dr79&amp;picSize=M">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://photo.yupoo.com/vitta1991/G3gfFPnd/medish.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/21/2016-12-21 18:23:19 MD语法/" class="archive-article-date">
-  	<time datetime="2016-12-21T10:23:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/21/2016-12-21 18:23:19 MD语法/">Markdown语法 </a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Markdown</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ObjectC</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://vittaSpace.tk/2017/01/24/2017-01-24 WKWebview缓存图片/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/21/2016-12-21 Angularjs jump/" class="archive-article-date">
-  	<time datetime="2016-12-21T09:38:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-21</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/21/2016-12-21 Angularjs jump/">AnjularJS 跳转 </a>
-    </h1>
+    <a href="/2017/02/04/2017-02-04 mac任何来源/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          安全性与隐私 中没有任何来源选项
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/16/2017-01-16 18:49:47图片模糊背景/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">图片模糊,图片当背景</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2017-01-24 WKWebview缓存图片" data-title="webview缓存图片" data-url="http://vittaSpace.tk/2017/01/24/2017-01-24 WKWebview缓存图片/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"vittadiscuss"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AngularJS</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/06/2016-12-06 10:36:52 Git命令/" class="archive-article-date">
-  	<time datetime="2016-12-06T02:47:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/06/2016-12-06 10:36:52 Git命令/">Git命令 </a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/06/2016-12-07 18-14-16 symfony学习中的记录/" class="archive-article-date">
-  	<time datetime="2016-12-06T02:47:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/06/2016-12-07 18-14-16 symfony学习中的记录/">symfony学习记录 </a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/06/2016-12-07 15:14:22  postgresql数据库导入/" class="archive-article-date">
-  	<time datetime="2016-12-06T02:47:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/06/2016-12-07 15:14:22  postgresql数据库导入/">postgresql数据库导入 </a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">postgresql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/05/Mysql-import-md/" class="archive-article-date">
-  	<time datetime="2016-12-05T06:22:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/05/Mysql-import-md/">Mysql数据库导入</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/05/2016-12-05 11:46:43 PHP-Redis/" class="archive-article-date">
-  	<time datetime="2016-12-05T05:54:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/05/2016-12-05 11:46:43 PHP-Redis/">Mac下 Redis 和 Php-redis扩展安装 </a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/01/2016-12-01-general-php-resources/" class="archive-article-date">
-  	<time datetime="2016-12-01T05:54:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/01/2016-12-01-general-php-resources/">Mac 下配置 apache PHP mysql </a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/01/2016-12-01-general-PHP_New-resources/" class="archive-article-date">
-  	<time datetime="2016-11-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/01/2016-12-01-general-PHP_New-resources/">初学PHP Laravel </a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/28/2016-11-28-general-lumenMysql-resources /" class="archive-article-date">
-  	<time datetime="2016-11-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/28/2016-11-28-general-lumenMysql-resources /">Lumen项目 migrate Mysql </a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Lumen</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/24/2016-11-24-general-apache-resources/" class="archive-article-date">
-  	<time datetime="2016-11-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/24/2016-11-24-general-apache-resources/">Apache 3个常用命令,Mysql无法开启的问题 </a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Apache Mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -594,8 +343,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
