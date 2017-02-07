@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://vittaSpace.tk">
   <title>WKWebView 手动添加Cookie | VittaSpace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="(原文链接)[http://stackoverflow.com/questions/26573137/can-i-set-the-cookies-to-be-used-by-a-wkwebview]
-在原生登录的成功回调里执行[NSKeyedArchiver archiveRootObject:[NSHTTPCookieStorage sharedHTTPCookieStorage] cookie">
+  <meta name="description" content="原文链接
+在原生登录的成功回调里执行[NSKeyedArchiver archiveRootObject:[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies] toFile:kUserCookieFile];保存登录获取的Cookie">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WKWebView 手动添加Cookie">
 <meta property="og:url" content="http://vittaSpace.tk/2017/02/07/2017-02-07 WKWebview添加Cookie/index.html">
 <meta property="og:site_name" content="VittaSpace">
-<meta property="og:description" content="(原文链接)[http://stackoverflow.com/questions/26573137/can-i-set-the-cookies-to-be-used-by-a-wkwebview]
-在原生登录的成功回调里执行[NSKeyedArchiver archiveRootObject:[NSHTTPCookieStorage sharedHTTPCookieStorage] cookie">
-<meta property="og:updated_time" content="2017-02-07T08:07:04.000Z">
+<meta property="og:description" content="原文链接
+在原生登录的成功回调里执行[NSKeyedArchiver archiveRootObject:[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies] toFile:kUserCookieFile];保存登录获取的Cookie">
+<meta property="og:updated_time" content="2017-02-07T08:09:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WKWebView 手动添加Cookie">
-<meta name="twitter:description" content="(原文链接)[http://stackoverflow.com/questions/26573137/can-i-set-the-cookies-to-be-used-by-a-wkwebview]
-在原生登录的成功回调里执行[NSKeyedArchiver archiveRootObject:[NSHTTPCookieStorage sharedHTTPCookieStorage] cookie">
+<meta name="twitter:description" content="原文链接
+在原生登录的成功回调里执行[NSKeyedArchiver archiveRootObject:[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies] toFile:kUserCookieFile];保存登录获取的Cookie">
   
     <link rel="alternative" href="/atom.xml" title="VittaSpace" type="application/atom+xml">
   
@@ -162,7 +162,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>(原文链接)[<a href="http://stackoverflow.com/questions/26573137/can-i-set-the-cookies-to-be-used-by-a-wkwebview" target="_blank" rel="external">http://stackoverflow.com/questions/26573137/can-i-set-the-cookies-to-be-used-by-a-wkwebview</a>]</p>
+        <p><a href="http://stackoverflow.com/questions/26573137/can-i-set-the-cookies-to-be-used-by-a-wkwebview" target="_blank" rel="external">原文链接</a></p>
 <p>在原生登录的成功回调里执行<code>[NSKeyedArchiver archiveRootObject:[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies] toFile:kUserCookieFile];</code>保存登录获取的Cookie<br><a id="more"></a><br>在设置WKWebview request前调用:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">NSString* value1;</div><div class="line">   NSString* value2;</div><div class="line">   for (NSHTTPCookie *cookie in [NSKeyedUnarchiver unarchiveObjectWithFile:kUserCookieFile])</div><div class="line">   &#123;</div><div class="line">       if ([cookie.name isEqualToString:@&quot;key1&quot;])</div><div class="line">       &#123;</div><div class="line">           value1 = cookie.value;</div><div class="line">       &#125;</div><div class="line">       else if ([cookie.name isEqualToString:@&quot;key2&quot;])</div><div class="line">       &#123;</div><div class="line">           value2 = cookie.value;</div><div class="line">       &#125;</div><div class="line">   [request setValue:[NSString stringWithFormat:@&quot;key1=%@;key2=%@;&quot;,value1,value2] forHTTPHeaderField:@&quot;Cookie&quot;];</div></pre></td></tr></table></figure></p>
 <p>如果发送AJAX请求的话,在初始化WKWebview的地方:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">WKUserContentController* userContentController = WKUserContentController.new;</div><div class="line">WKUserScript * cookieScript = [[WKUserScript alloc] </div><div class="line">    initWithSource: @&quot;document.cookie = &apos;TeskCookieKey1=TeskCookieValue1&apos;;document.cookie = &apos;TeskCookieKey2=TeskCookieValue2&apos;;&quot;</div><div class="line">    injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];</div><div class="line">// again, use stringWithFormat: in the above line to inject your values programmatically</div><div class="line">[userContentController addUserScript:cookieScript];</div><div class="line">WKWebViewConfiguration* webViewConfig = WKWebViewConfiguration.new;</div><div class="line">webViewConfig.userContentController = userContentController;</div><div class="line">WKWebView * webView = [[WKWebView alloc] initWithFrame:CGRectMake(/*set your values*/) configuration:webViewConfig];</div></pre></td></tr></table></figure></p>
 
@@ -403,23 +403,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Apache Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Lumen</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -431,11 +423,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -444,6 +440,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AngularJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
