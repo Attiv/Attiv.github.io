@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://vittaSpace.tk">
-  <title>WKWebView 手动添加Cookie | VittaSpace</title>
+  <title>WKWebView 手动添加和清除Cookie | VittaSpace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="原文链接
 在原生登录的成功回调里执行[NSKeyedArchiver archiveRootObject:[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies] toFile:kUserCookieFile];保存登录获取的Cookie">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WKWebView 手动添加Cookie">
+<meta property="og:title" content="WKWebView 手动添加和清除Cookie">
 <meta property="og:url" content="http://vittaSpace.tk/2017/02/07/2017-02-07 WKWebview添加Cookie/index.html">
 <meta property="og:site_name" content="VittaSpace">
 <meta property="og:description" content="原文链接
 在原生登录的成功回调里执行[NSKeyedArchiver archiveRootObject:[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies] toFile:kUserCookieFile];保存登录获取的Cookie">
-<meta property="og:updated_time" content="2017-02-07T08:09:28.000Z">
+<meta property="og:updated_time" content="2017-02-21T10:07:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WKWebView 手动添加Cookie">
+<meta name="twitter:title" content="WKWebView 手动添加和清除Cookie">
 <meta name="twitter:description" content="原文链接
 在原生登录的成功回调里执行[NSKeyedArchiver archiveRootObject:[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies] toFile:kUserCookieFile];保存登录获取的Cookie">
   
@@ -149,7 +149,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      WKWebView 手动添加Cookie
+      WKWebView 手动添加和清除Cookie
     </h1>
   
 
@@ -163,8 +163,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://stackoverflow.com/questions/26573137/can-i-set-the-cookies-to-be-used-by-a-wkwebview" target="_blank" rel="external">原文链接</a></p>
-<p>在原生登录的成功回调里执行<code>[NSKeyedArchiver archiveRootObject:[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies] toFile:kUserCookieFile];</code>保存登录获取的Cookie<br><a id="more"></a><br>在设置WKWebview request前调用:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">NSString* value1;</div><div class="line">   NSString* value2;</div><div class="line">   for (NSHTTPCookie *cookie in [NSKeyedUnarchiver unarchiveObjectWithFile:kUserCookieFile])</div><div class="line">   &#123;</div><div class="line">       if ([cookie.name isEqualToString:@&quot;key1&quot;])</div><div class="line">       &#123;</div><div class="line">           value1 = cookie.value;</div><div class="line">       &#125;</div><div class="line">       else if ([cookie.name isEqualToString:@&quot;key2&quot;])</div><div class="line">       &#123;</div><div class="line">           value2 = cookie.value;</div><div class="line">       &#125;</div><div class="line">   [request setValue:[NSString stringWithFormat:@&quot;key1=%@;key2=%@;&quot;,value1,value2] forHTTPHeaderField:@&quot;Cookie&quot;];</div></pre></td></tr></table></figure></p>
+<p>在原生登录的成功回调里执行<code>[NSKeyedArchiver archiveRootObject:[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies] toFile:kUserCookieFile];</code>保存登录获取的Cookie<br><a id="more"></a></p>
+<h2 id="添加Cookie"><a href="#添加Cookie" class="headerlink" title="添加Cookie"></a>添加Cookie</h2><p>在设置WKWebview request前调用:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">NSString* value1;</div><div class="line">   NSString* value2;</div><div class="line">   for (NSHTTPCookie *cookie in [NSKeyedUnarchiver unarchiveObjectWithFile:kUserCookieFile])</div><div class="line">   &#123;</div><div class="line">       if ([cookie.name isEqualToString:@&quot;key1&quot;])</div><div class="line">       &#123;</div><div class="line">           value1 = cookie.value;</div><div class="line">       &#125;</div><div class="line">       else if ([cookie.name isEqualToString:@&quot;key2&quot;])</div><div class="line">       &#123;</div><div class="line">           value2 = cookie.value;</div><div class="line">       &#125;</div><div class="line">   [request setValue:[NSString stringWithFormat:@&quot;key1=%@;key2=%@;&quot;,value1,value2] forHTTPHeaderField:@&quot;Cookie&quot;];</div></pre></td></tr></table></figure></p>
 <p>如果发送AJAX请求的话,在初始化WKWebview的地方:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">WKUserContentController* userContentController = WKUserContentController.new;</div><div class="line">WKUserScript * cookieScript = [[WKUserScript alloc] </div><div class="line">    initWithSource: @&quot;document.cookie = &apos;TeskCookieKey1=TeskCookieValue1&apos;;document.cookie = &apos;TeskCookieKey2=TeskCookieValue2&apos;;&quot;</div><div class="line">    injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];</div><div class="line">// again, use stringWithFormat: in the above line to inject your values programmatically</div><div class="line">[userContentController addUserScript:cookieScript];</div><div class="line">WKWebViewConfiguration* webViewConfig = WKWebViewConfiguration.new;</div><div class="line">webViewConfig.userContentController = userContentController;</div><div class="line">WKWebView * webView = [[WKWebView alloc] initWithFrame:CGRectMake(/*set your values*/) configuration:webViewConfig];</div></pre></td></tr></table></figure></p>
+<h2 id="清除Cookie"><a href="#清除Cookie" class="headerlink" title="清除Cookie"></a>清除Cookie</h2><p>比如在登出的时候需要清除Cookie,使用WKWebview的话就需要使用如下的方法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">if ([[UIDevice currentDevice].systemVersion floatValue] &gt;= 9.0)</div><div class="line">  &#123;</div><div class="line">      NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes];</div><div class="line"></div><div class="line">      NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0];</div><div class="line"></div><div class="line">      [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes</div><div class="line">                                                 modifiedSince:dateFrom</div><div class="line">                                             completionHandler:^&#123;</div><div class="line"></div><div class="line">                                                 // Done</div><div class="line"></div><div class="line">                                             &#125;];</div><div class="line">  &#125;</div><div class="line">  [[NSFileManager defaultManager] removeItemAtPath:kUserInfoFile error:nil];</div><div class="line">  [[NSFileManager defaultManager] removeItemAtPath:kUserTokenFile error:nil];</div><div class="line">  [[NSFileManager defaultManager] removeItemAtPath:kUserCookieFile error:nil];</div><div class="line">  [webView.configuration.userContentController removeAllUserScripts];</div></pre></td></tr></table></figure></p>
 
       
 
@@ -304,7 +306,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2017-02-07 WKWebview添加Cookie" data-title="WKWebView 手动添加Cookie" data-url="http://vittaSpace.tk/2017/02/07/2017-02-07 WKWebview添加Cookie/"></div>
+	<div class="ds-thread" data-thread-key="2017-02-07 WKWebview添加Cookie" data-title="WKWebView 手动添加和清除Cookie" data-url="http://vittaSpace.tk/2017/02/07/2017-02-07 WKWebview添加Cookie/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -416,11 +418,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Apache Mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Apache Mysql</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -440,11 +446,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color5">AngularJS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AngularJS</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -452,15 +458,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
             
             <div class="clearfix"></div>
