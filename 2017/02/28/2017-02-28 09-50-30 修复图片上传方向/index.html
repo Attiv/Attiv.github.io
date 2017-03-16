@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://vittaSpace.tk/2017/02/28/2017-02-28 09-50-30 修复图片上传方向/index.html">
 <meta property="og:site_name" content="VittaSpace">
 <meta property="og:description" content="在开发中经常遇到需要拍照上传图片,而上传的图片与拍摄的方向不符.">
-<meta property="og:updated_time" content="2017-02-28T01:56:16.000Z">
+<meta property="og:updated_time" content="2017-03-16T02:50:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="上传图片方向错误">
 <meta name="twitter:description" content="在开发中经常遇到需要拍照上传图片,而上传的图片与拍摄的方向不符.">
@@ -162,6 +162,13 @@
         <p>在开发中经常遇到需要拍照上传图片,而上传的图片与拍摄的方向不符.<br><a id="more"></a><br>有一种方法可以参照<a href="http://stackoverflow.com/questions/8915630/ios-uiimageview-how-to-handle-uiimage-image-orientation" target="_blank" rel="external">stackoverflow</a><br>具体代码如下:</p>
 <figure class="highlight plain"><figcaption><span>*originalImage = [... whatever ...];</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">UIImage *imageToDisplay =</div><div class="line">     [UIImage imageWithCGImage:[originalImage CGImage]</div><div class="line">              scale:[originalImage scale]</div><div class="line">              orientation: UIImageOrientationUp];</div></pre></td></tr></table></figure>
 <p>这里的UIImageOrientationUp可以根据拍照或者从相册选择</p>
+<blockquote>
+<p>使用Category</p>
+</blockquote>
+<p><strong>.h文件</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@interface UIImage (fixOrientation)</div><div class="line">- (UIImage *)fixOrientation;</div><div class="line">@end</div></pre></td></tr></table></figure>
+<p><strong>.m文件</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div></pre></td><td class="code"><pre><div class="line">#import &quot;UIImage+fixOrientation.h&quot;</div><div class="line"></div><div class="line">@implementation UIImage (fixOrientation)</div><div class="line">- (UIImage *)fixOrientation &#123;</div><div class="line">    </div><div class="line">    // No-op if the orientation is already correct</div><div class="line">    if (self.imageOrientation == UIImageOrientationUp) return self;</div><div class="line">    </div><div class="line">    // We need to calculate the proper transformation to make the image upright.</div><div class="line">    // We do it in 2 steps: Rotate if Left/Right/Down, and then flip if Mirrored.</div><div class="line">    CGAffineTransform transform = CGAffineTransformIdentity;</div><div class="line"></div><div class="line">    switch (self.imageOrientation)</div><div class="line">    &#123;</div><div class="line">        case UIImageOrientationDown:</div><div class="line">        case UIImageOrientationDownMirrored:</div><div class="line">            transform = CGAffineTransformTranslate(transform, self.size.width, self.size.height);</div><div class="line">            transform = CGAffineTransformRotate(transform, M_PI);</div><div class="line">            break;</div><div class="line">            </div><div class="line">        case UIImageOrientationLeft:</div><div class="line">        case UIImageOrientationLeftMirrored:</div><div class="line">            transform = CGAffineTransformTranslate(transform, self.size.width, 0);</div><div class="line">            transform = CGAffineTransformRotate(transform, M_PI_2);</div><div class="line">            break;</div><div class="line">            </div><div class="line">        case UIImageOrientationRight:</div><div class="line">        case UIImageOrientationRightMirrored:</div><div class="line">            transform = CGAffineTransformTranslate(transform, 0, self.size.height);</div><div class="line">            transform = CGAffineTransformRotate(transform, -M_PI_2);</div><div class="line">            break;</div><div class="line">        case UIImageOrientationUp:</div><div class="line">        case UIImageOrientationUpMirrored:</div><div class="line">            break;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    switch (self.imageOrientation) &#123;</div><div class="line">        case UIImageOrientationUpMirrored:</div><div class="line">        case UIImageOrientationDownMirrored:</div><div class="line">            transform = CGAffineTransformTranslate(transform, self.size.width, 0);</div><div class="line">            transform = CGAffineTransformScale(transform, -1, 1);</div><div class="line">            break;</div><div class="line">            </div><div class="line">        case UIImageOrientationLeftMirrored:</div><div class="line">        case UIImageOrientationRightMirrored:</div><div class="line">            transform = CGAffineTransformTranslate(transform, self.size.height, 0);</div><div class="line">            transform = CGAffineTransformScale(transform, -1, 1);</div><div class="line">            break;</div><div class="line">        case UIImageOrientationUp:</div><div class="line">        case UIImageOrientationDown:</div><div class="line">        case UIImageOrientationLeft:</div><div class="line">        case UIImageOrientationRight:</div><div class="line">            break;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    // Now we draw the underlying CGImage into a new context, applying the transform</div><div class="line">    // calculated above.</div><div class="line">    CGContextRef ctx = CGBitmapContextCreate(NULL, self.size.width, self.size.height,</div><div class="line">                                             CGImageGetBitsPerComponent(self.CGImage), 0,</div><div class="line">                                             CGImageGetColorSpace(self.CGImage),</div><div class="line">                                             CGImageGetBitmapInfo(self.CGImage));</div><div class="line">    CGContextConcatCTM(ctx, transform);</div><div class="line">    switch (self.imageOrientation) &#123;</div><div class="line">        case UIImageOrientationLeft:</div><div class="line">        case UIImageOrientationLeftMirrored:</div><div class="line">        case UIImageOrientationRight:</div><div class="line">        case UIImageOrientationRightMirrored:</div><div class="line">            // Grr...</div><div class="line">            CGContextDrawImage(ctx, CGRectMake(0,0,self.size.height,self.size.width), self.CGImage);</div><div class="line">            break;</div><div class="line">            </div><div class="line">        default:</div><div class="line">            CGContextDrawImage(ctx, CGRectMake(0,0,self.size.width,self.size.height), self.CGImage);</div><div class="line">            break;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    // And now we just create a new UIImage from the drawing context</div><div class="line">    CGImageRef cgimg = CGBitmapContextCreateImage(ctx);</div><div class="line">    UIImage *img = [UIImage imageWithCGImage:cgimg];</div><div class="line">    CGContextRelease(ctx);</div><div class="line">    CGImageRelease(cgimg);</div><div class="line">    return img;</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
 
       
 
@@ -409,10 +416,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Lumen</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Apache Mysql</a>
               </li>
              
@@ -421,23 +424,11 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Lumen</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -445,11 +436,27 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ObjectC</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">postgresql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">AngularJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ObjectC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
