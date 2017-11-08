@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://Joker-1991.github.io">
-  <title>Apache 3个常用命令,Mysql无法开启的问题  | VittaSpace</title>
+  <title>UIButton增加响应区域 | VittaSpace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Apache 3个常用命令 开启Apache: sudo apachectl start  关闭Apache: sudo apachectl stop  重启Apache: sudo apachectl restart   如果用brew下载了新版的Php之后apache打不开">
-<meta name="keywords" content="Apache Mysql">
+  <meta name="description" content="转自雨中漫步 给UIButton 建立一个Category:  UIButton+EnlargeEdge.h  123456#import &amp;lt;objc/runtime.h&amp;gt;@interface UIButton (EnlargeEdge)- (void)setEnlargeEdge:(CGFloat) size;- (void)setEnlargeEdgeWithTop:(CGFloa">
+<meta name="keywords" content="ObjectC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Apache 3个常用命令,Mysql无法开启的问题 ">
-<meta property="og:url" content="http://Joker-1991.github.io/2016/11/24/2016-11-24-general-apache-resources/index.html">
+<meta property="og:title" content="UIButton增加响应区域">
+<meta property="og:url" content="http://Joker-1991.github.io/2017/10/26/2017-10-26 14-53-05  UIButton扩大响应区域/index.html">
 <meta property="og:site_name" content="VittaSpace">
-<meta property="og:description" content="Apache 3个常用命令 开启Apache: sudo apachectl start  关闭Apache: sudo apachectl stop  重启Apache: sudo apachectl restart   如果用brew下载了新版的Php之后apache打不开">
-<meta property="og:updated_time" content="2017-04-05T06:13:43.000Z">
+<meta property="og:description" content="转自雨中漫步 给UIButton 建立一个Category:  UIButton+EnlargeEdge.h  123456#import &amp;lt;objc/runtime.h&amp;gt;@interface UIButton (EnlargeEdge)- (void)setEnlargeEdge:(CGFloat) size;- (void)setEnlargeEdgeWithTop:(CGFloa">
+<meta property="og:updated_time" content="2017-10-26T10:33:51.366Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Apache 3个常用命令,Mysql无法开启的问题 ">
-<meta name="twitter:description" content="Apache 3个常用命令 开启Apache: sudo apachectl start  关闭Apache: sudo apachectl stop  重启Apache: sudo apachectl restart   如果用brew下载了新版的Php之后apache打不开">
+<meta name="twitter:title" content="UIButton增加响应区域">
+<meta name="twitter:description" content="转自雨中漫步 给UIButton 建立一个Category:  UIButton+EnlargeEdge.h  123456#import &amp;lt;objc/runtime.h&amp;gt;@interface UIButton (EnlargeEdge)- (void)setEnlargeEdge:(CGFloat) size;- (void)setEnlargeEdgeWithTop:(CGFloa">
   
     <link rel="alternative" href="/atom.xml" title="VittaSpace" type="application/atom+xml">
   
@@ -140,48 +140,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2016-11-24-general-apache-resources" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2017-10-26 14-53-05  UIButton扩大响应区域" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Apache 3个常用命令,Mysql无法开启的问题 
+      UIButton增加响应区域
     </h1>
   
 
         
-        <a href="/2016/11/24/2016-11-24-general-apache-resources/" class="archive-article-date">
-  	<time datetime="2016-11-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-24</time>
+        <a href="/2017/10/26/2017-10-26 14-53-05  UIButton扩大响应区域/" class="archive-article-date">
+  	<time datetime="2017-10-26T10:30:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Apache-3个常用命令"><a href="#Apache-3个常用命令" class="headerlink" title="Apache 3个常用命令"></a>Apache 3个常用命令</h2><ul>
-<li><p>开启Apache: <code>sudo apachectl start</code></p>
-</li>
-<li><p>关闭Apache: <code>sudo apachectl stop</code></p>
-</li>
-<li><p>重启Apache: <code>sudo apachectl restart</code></p>
-</li>
-</ul>
-<h2 id="如果用brew下载了新版的Php之后apache打不开"><a href="#如果用brew下载了新版的Php之后apache打不开" class="headerlink" title="如果用brew下载了新版的Php之后apache打不开"></a>如果用brew下载了新版的Php之后apache打不开</h2><a id="more"></a>
-<p>可能是使用 <code>brew install php56</code>的时候没有带参数<br>尽量使用 <code>brew install php70 --with-apxs2  --with-apache --with-gmp --with-imap --with-tidy --with-debug</code><br>然后在httpd.conf里配置<code>LoadModule php5_modele /usr/local/Cellar/php56/5.6.27_4/libexec/apache2/libphp5.so</code></p>
-<h2 id="lumen项目-migrate-Mysql"><a href="#lumen项目-migrate-Mysql" class="headerlink" title="lumen项目 migrate Mysql"></a>lumen项目 migrate Mysql</h2><ol>
-<li>登录MySql 创建一个名字和lumen项目目录下.env文件里DB_DATABASE 名字一样的数据库.</li>
-<li>执行<code>php artisan migrate</code></li>
-<li>进行填充,执行<code>php artisan db:seed</code></li>
-</ol>
-<h2 id="Mysql无法开启的问题"><a href="#Mysql无法开启的问题" class="headerlink" title="Mysql无法开启的问题"></a>Mysql无法开启的问题</h2><p>Mysql在无论怎么安装卸载修改变量都无法开启成功的情况下,可以尝试删除Mysql,然后用 老版本 <code>https://pan.baidu.com/s/1qYrmAZU</code> 密码: <code>teu1</code>安装,通过系统偏好设置的Mysql点击开启,使用<code>/usr/local/mysql/bin/mysql</code>进入数据库,<br>mysql默认密码为空，修改密码<code>mysqladmin -uroot password &quot;密码&quot;</code>   例如 修改密码为root   <code>mysqladmin -uroot password root</code></p>
-<h2 id="Memory-limit-errors"><a href="#Memory-limit-errors" class="headerlink" title="Memory limit errors"></a>Memory limit errors</h2><p>Composer<a href="https://getcomposer.org/doc/articles/troubleshooting.md#memory-limit-errors" target="_blank" rel="external">官方问题查询</a><br>可以在phpinfo()里面查看php.ini在哪里(<code>Loaded Configuration File</code>这一项)<br>然后把<code>memory_limit = -1</code></p>
+        <p>转自<a href="http://wenrisheng.iteye.com/blog/1987996" target="_blank" rel="external">雨中漫步</a></p>
+<p>给<code>UIButton</code> 建立一个<code>Category</code>:</p>
 <blockquote>
-<p>To get the current memory_limit value, run:<code>php -r &quot;echo ini_get(&#39;memory_limit&#39;).PHP_EOL;&quot;</code></p>
-<p>Or, you can increase the limit with a command-line argument:<code>php -d memory_limit=-1 composer.phar &lt;...&gt;</code></p>
+<p>UIButton+EnlargeEdge.h</p>
 </blockquote>
-<h2 id="PHP-Startup-redis-Unable-to-initialize-module"><a href="#PHP-Startup-redis-Unable-to-initialize-module" class="headerlink" title="PHP Startup: redis: Unable to initialize module"></a>PHP Startup: redis: Unable to initialize module</h2><p>使用<code>brew install php70</code> 之后 <code>php -v</code> 出现 <code>PHP Startup: redis: Unable to initialize module</code>错误,可以使用:<code>brew reinstall php70-redis --build-from-source</code> <a href="https://github.com/Homebrew/homebrew-php/issues/1556" target="_blank" rel="external">解决</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#import &lt;objc/runtime.h&gt;</div><div class="line"></div><div class="line">@interface UIButton (EnlargeEdge)</div><div class="line">- (void)setEnlargeEdge:(CGFloat) size;</div><div class="line">- (void)setEnlargeEdgeWithTop:(CGFloat) top right:(CGFloat) right bottom:(CGFloat) bottom left:(CGFloat) left;</div><div class="line">@end</div></pre></td></tr></table></figure>
+<p>–<br>&gt;<br>UIButton+EnlargeEdge.m</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">#import &quot;UIButton+EnlargeEdge.h&quot;</div><div class="line">#import &lt;objc/runtime.h&gt;</div><div class="line"></div><div class="line">@implementation UIButton (EnlargeEdge)</div><div class="line"></div><div class="line">static char topNameKey;</div><div class="line">static char rightNameKey;</div><div class="line">static char bottomNameKey;</div><div class="line">static char leftNameKey;</div><div class="line"></div><div class="line">- (void)setEnlargeEdge:(CGFloat)size</div><div class="line">&#123;</div><div class="line">    objc_setAssociatedObject(self, &amp;topNameKey, [NSNumber numberWithFloat:size], OBJC_ASSOCIATION_COPY_NONATOMIC);</div><div class="line">    objc_setAssociatedObject(self, &amp;rightNameKey, [NSNumber numberWithFloat:size], OBJC_ASSOCIATION_COPY_NONATOMIC);</div><div class="line">    objc_setAssociatedObject(self, &amp;bottomNameKey, [NSNumber numberWithFloat:size], OBJC_ASSOCIATION_COPY_NONATOMIC);</div><div class="line">    objc_setAssociatedObject(self, &amp;leftNameKey, [NSNumber numberWithFloat:size], OBJC_ASSOCIATION_COPY_NONATOMIC);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)setEnlargeEdgeWithTop:(CGFloat)top right:(CGFloat)right bottom:(CGFloat)bottom left:(CGFloat)left</div><div class="line">&#123;</div><div class="line">    objc_setAssociatedObject(self, &amp;topNameKey, [NSNumber numberWithFloat:top], OBJC_ASSOCIATION_COPY_NONATOMIC);</div><div class="line">    objc_setAssociatedObject(self, &amp;rightNameKey, [NSNumber numberWithFloat:right], OBJC_ASSOCIATION_COPY_NONATOMIC);</div><div class="line">    objc_setAssociatedObject(self, &amp;bottomNameKey, [NSNumber numberWithFloat:bottom], OBJC_ASSOCIATION_COPY_NONATOMIC);</div><div class="line">    objc_setAssociatedObject(self, &amp;leftNameKey, [NSNumber numberWithFloat:left], OBJC_ASSOCIATION_COPY_NONATOMIC);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (CGRect)enlargedRect</div><div class="line">&#123;</div><div class="line">    NSNumber* topEdge = objc_getAssociatedObject(self, &amp;topNameKey);</div><div class="line">    NSNumber* rightEdge = objc_getAssociatedObject(self, &amp;rightNameKey);</div><div class="line">    NSNumber* bottomEdge = objc_getAssociatedObject(self, &amp;bottomNameKey);</div><div class="line">    NSNumber* leftEdge = objc_getAssociatedObject(self, &amp;leftNameKey);</div><div class="line">    if (topEdge &amp;&amp; rightEdge &amp;&amp; bottomEdge &amp;&amp; leftEdge) &#123;</div><div class="line">        return CGRectMake(self.bounds.origin.x - leftEdge.floatValue,</div><div class="line">            self.bounds.origin.y - topEdge.floatValue,</div><div class="line">            self.bounds.size.width + leftEdge.floatValue + rightEdge.floatValue,</div><div class="line">            self.bounds.size.height + topEdge.floatValue + bottomEdge.floatValue);</div><div class="line">    &#125;</div><div class="line">    else &#123;</div><div class="line">        return self.bounds;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event</div><div class="line">&#123;</div><div class="line">    CGRect rect = [self enlargedRect];</div><div class="line">    if (CGRectEqualToRect(rect, self.bounds)) &#123;</div><div class="line">        return [super pointInside:point withEvent:event];</div><div class="line">    &#125;</div><div class="line">    return CGRectContainsPoint(rect, point) ? YES : NO;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
 
       
 
@@ -226,7 +212,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Apache Mysql</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ObjectC</a>
         		</li>
       		
 		</ul>
@@ -282,7 +268,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://Joker-1991.github.io/2016/11/24/2016-11-24-general-apache-resources/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://Joker-1991.github.io/2017/10/26/2017-10-26 14-53-05  UIButton扩大响应区域/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -296,15 +282,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/11/28/2016-11-28-general-lumenMysql-resources /" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/22017/10/26/2017-10-26 14-53-05 上传字典服务器不识别/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Lumen项目 migrate Mysql 
+          如果上传字典数组到服务器,服务器显示的格式不是字典数组
         
       </div>
     </a>
   
+  
+    <a href="/2017/10/26/2017-10-26 14-53-05 Object_return_empty/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">出现&lt;object returned empty description&gt;的解决方法</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -315,7 +306,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2016-11-24-general-apache-resources" data-title="Apache 3个常用命令,Mysql无法开启的问题 " data-url="http://Joker-1991.github.io/2016/11/24/2016-11-24-general-apache-resources/"></div>
+	<div class="ds-thread" data-thread-key="2017-10-26 14-53-05  UIButton扩大响应区域" data-title="UIButton增加响应区域" data-url="http://Joker-1991.github.io/2017/10/26/2017-10-26 14-53-05  UIButton扩大响应区域/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
