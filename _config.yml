@@ -67,7 +67,7 @@ disqus_shortname:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia
+theme: jekyll-theme-cayman
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
